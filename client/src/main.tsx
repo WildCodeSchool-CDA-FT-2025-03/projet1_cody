@@ -5,7 +5,7 @@ import './index.css'
 import App from './App.tsx'
 
 // Import des Pages
-
+import HomePage from './pages/HomePage/HomePage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
    children: [
     {
       path: "/",
-      element: <h1>Julien: Est ce que vous avez des questions ?</h1>,
+      element: <HomePage />,
     }
    ]
   },
