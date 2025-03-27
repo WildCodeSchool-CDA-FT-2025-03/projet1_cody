@@ -1,4 +1,4 @@
-
+import { ReactNode } from "react";
 
 // Import des Pages
 
@@ -18,8 +18,12 @@ import ProductGamePage from "../pages/ProductGamePage/ProductGamePage";
 import ProductMoviePage from "../pages/ProductMoviePage/ProductMoviePage";
 import ProductMusicPage from "../pages/ProductMusicPage/ProductMusicPage";
 
+interface RouterClientType {
+    path: string,
+    element: ReactNode
+}
 
-const routerClient = [
+const routerClient: RouterClientType[] = [
     /* {routerClient[0].path} */
     {
         path: "/",
