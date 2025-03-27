@@ -7,6 +7,19 @@ import App from './App.tsx'
 // Import des Pages
 import HomePage from './pages/HomePage/HomePage.tsx';
 
+import AccountPage from './pages/AccountPage/AccountPage.tsx';
+import AdminPage from './pages/AdminPage/AdminPage.tsx';
+
+import BookPage from './pages/BookPage/BookPage.tsx';
+import GamePage from './pages/GamePage/GamePage.tsx';
+import MoviePage from './pages/MoviePage/MoviePage.tsx';
+import MusicPage from './pages/MusicPage/MusicPage.tsx';
+
+import ProductBookPage from './pages/ProductBookPage/ProductBookPage.tsx';
+import ProductGamePage from './pages/ProductGamePage/ProductGamePage.tsx';
+import ProductMoviePage from './pages/ProductMoviePage/ProductMoviePage.tsx';
+import ProductMusicPage from './pages/ProductMusicPage/ProductMusicPage.tsx';
+
 const router = createBrowserRouter([
   {
    element: <App />,
