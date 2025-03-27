@@ -1,8 +1,8 @@
-import style from './ProductBookRootRoot.module.css';
+import style from './ProductBookRoot.module.css';
 
-function ProductBookRootRoot() {
+function ProductBookRoot() {
     return (
-        <div className={style.ProductBookRootRoot}>
+        <div className={style.ProductBookRoot}>
             <h1>
                 Je suis dans la page ProductBookRoot
             </h1>
@@ -10,4 +10,4 @@ function ProductBookRootRoot() {
     )
 }
 
-export default ProductBookRootRoot;
+export default ProductBookRoot;
