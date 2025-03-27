@@ -35,4 +35,51 @@ const routerClient = [
         path: "/admin",
         element: <AdminPage />,
     },
+    /* {routerClient[3].path} */
+    {
+        path: "/not-found",
+        element: <NotFoundPage />,
+    },
+    /* {routerClient[4].path} */
+    {
+        path: "/book",
+        element: <BookPage />,
+    },
+    /* {routerClient[5].path} */
+    {
+        path: "/game",
+        element: <GamePage />,
+    },
+    /* {routerClient[6].path} */
+    {
+        path: "/movie",
+        element: <MoviePage />,
+    },
+    /* {routerClient[7].path} */
+    {
+        path: "/music",
+        element: <MusicPage />,
+    },
+    /* {routerClient[8].path} */
+    {
+        path: "/product-book",
+        element: <ProductBookPage />,
+    },
+    /* {routerClient[9].path} */
+    {
+        path: "/product-game",
+        element: <ProductGamePage />,
+    },
+    /* {routerClient[10].path} */
+    {
+        path: "/product-movie",
+        element: <ProductMoviePage />,
+    },
+    /* {routerClient[11].path} */
+    {
+        path: "/product-music",
+        element: <ProductMusicPage />,
+    },
 ]
+
+export default routerClient;
