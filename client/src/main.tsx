@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage/HomePage.tsx';
 
 import AccountPage from './pages/AccountPage/AccountPage.tsx';
 import AdminPage from './pages/AdminPage/AdminPage.tsx';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage.tsx';
 
 import BookPage from './pages/BookPage/BookPage.tsx';
 import GamePage from './pages/GamePage/GamePage.tsx';
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
    children: [
     {
       path: "/",
+      element: <HomePage />,
+    },
+    {
+      path: "/account",
       element: <HomePage />,
     }
    ]
