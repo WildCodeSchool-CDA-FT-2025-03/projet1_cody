@@ -1,11 +1,11 @@
 import NavRoot from "../../components/NavRoot/NavRoot";
-import AdminRoot from "../../components/AdminRoot/AdminRoot";
+import AccountRoot from "../../components/AccountRoot/AccountRoot";
 import FooterRoot from "../../components/FooterRoot/FooterRoot";
 
 // Le style des balises HTML de toutes les racines de pages sont définit dans un seul module CSS
 import CSSTargetPage from "../StylePage.module.css";
 
-function AdminPage() {
+function AccountPage() {
   return (
     <div className={CSSTargetPage.ContainerPage}>
       <header className={CSSTargetPage.Header}>
@@ -13,7 +13,7 @@ function AdminPage() {
       </header>
 
       <main className={CSSTargetPage.Main}>
-        <AdminRoot />
+        <AccountRoot />
       </main>
 
       <footer className={CSSTargetPage.Footer}>
@@ -23,4 +23,4 @@ function AdminPage() {
   );
 }
 
-export default AdminPage;
+export default AccountPage;

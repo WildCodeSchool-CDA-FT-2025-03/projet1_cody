@@ -4,6 +4,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css'
 import App from './App.tsx'
 
+// Import des Pages
+
+
 const router = createBrowserRouter([
   {
    element: <App />,
