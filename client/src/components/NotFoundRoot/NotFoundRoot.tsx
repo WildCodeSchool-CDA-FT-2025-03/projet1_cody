@@ -1,13 +1,13 @@
-import style from './NotFoundRoot.module.css';
+import style from "./NotFoundRoot.module.css";
 
 function NotFoundRoot() {
-    return (
-        <div className={style.NotFoundRoot}>
-            <h1>
+  return (
+    <div className={style.NotFoundRoot}>
+      <h1>
                 Je suis dans la page NotFoundRoot
-            </h1>
-        </div>
-    )
+      </h1>
+    </div>
+  );
 }
 
 export default NotFoundRoot;

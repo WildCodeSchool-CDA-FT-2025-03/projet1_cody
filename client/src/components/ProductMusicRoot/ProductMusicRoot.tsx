@@ -1,13 +1,13 @@
-import style from './ProductMusicRoot.module.css';
+import style from "./ProductMusicRoot.module.css";
 
 function ProductMusicRootRoot() {
-    return (
-        <div className={style.ProductMusicRootRoot}>
-            <h1>
+  return (
+    <div className={style.ProductMusicRootRoot}>
+      <h1>
                 Je suis dans la page ProductMusicRoot
-            </h1>
-        </div>
-    )
+      </h1>
+    </div>
+  );
 }
 
 export default ProductMusicRootRoot;
