@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "bash ./npm-run-commit.sh",
     "dev": "concurrently \"npm --prefix client run dev\" \"npm --prefix server run dev\"",
-    "prepare": "husky install"
+    "prepare": "husky install", 
+    "lint-staged": "lint-staged"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +20,9 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0"
   },
-  "type": "module"
+  "lint-staged": {
+    "client/**/*.{ts,tsx}": [
+      "npm run lint --prefix client"
+    ]
+  }
 }
