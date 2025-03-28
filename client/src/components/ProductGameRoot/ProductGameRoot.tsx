@@ -1,4 +1,4 @@
-import style from './ProductGameRootRoot.module.css';
+import style from './ProductGameRoot.module.css';
 
 function ProductGameRootRoot() {
     return (

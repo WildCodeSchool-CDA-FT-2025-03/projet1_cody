@@ -1,4 +1,4 @@
-import style from './ProductMovieRootRoot.module.css';
+import style from './ProductMovieRoot.module.css';
 
 function ProductMovieRootRoot() {
     return (

@@ -1,4 +1,4 @@
-import style from './ProductMusicRootRoot.module.css';
+import style from './ProductMusicRoot.module.css';
 
 function ProductMusicRootRoot() {
     return (
