@@ -11,6 +11,7 @@ function BookPage() {
       <header className={CSSTargetPage.Header}>
         <NavRoot />
       </header>
+      <div />
 
       <main className={CSSTargetPage.Main}>
         <BookRoot />

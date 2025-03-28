@@ -26,7 +26,7 @@ export default [
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'semi': ['error', 'always'],
-      'quotes': ['error', 'double'],
+      'quotes': ['error', 'simple'],
       'indent': ['error', 2],
       'no-console': ['error', { allow: ['warn', 'error'] }],
       'import/no-unresolved': 'error',
