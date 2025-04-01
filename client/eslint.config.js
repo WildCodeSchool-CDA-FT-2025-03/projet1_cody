@@ -2,7 +2,6 @@ import js from '@eslint/js';
 import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-// import importPlugin from 'eslint-plugin-import';
 import tseslint from 'typescript-eslint';
 
 export default [
@@ -20,7 +19,6 @@ export default [
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      // import: importPlugin,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -29,7 +27,6 @@ export default [
       'quotes': ['error', 'double'],
       'indent': ['error', 2],
       'no-console': ['error', { allow: ['warn', 'error'] }],
-      // 'import/no-unresolved': 'error',
     },
     settings: {
       react: {
