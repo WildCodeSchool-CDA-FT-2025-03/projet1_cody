@@ -11,15 +11,14 @@ function BookPage() {
       <header className={CSSTargetPage.Header}>
         <NavRoot />
       </header>
-      <div />
 
       <main className={CSSTargetPage.Main}>
         <BookRoot />
       </main>
 
-      <footer className={CSSTargetPage.Footer}>
+      <div className={CSSTargetPage.Footer}>
         <FooterRoot />
-      </footer>
+      </div>
     </div>
   );
 }
