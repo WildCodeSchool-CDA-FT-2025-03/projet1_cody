@@ -3,8 +3,11 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 import { dataSource } from "./config/sqlite";
 import { buildSchema } from "type-graphql";
 import "reflect-metadata";
+import "dotenv/config";
 
 import GameResolvers from "./graphql/game/game.resolvers";
+
+const PORT = parseInt(process.env.PORT_SERVER) || 3000;
 
 /** Fonction auto appellée (évite la mise en constante) permettant de lancer le serveur */
 (async () => {
@@ -15,9 +18,8 @@ import GameResolvers from "./graphql/game/game.resolvers";
   const server = new ApolloServer({
     schema,
   });
-
   await dataSource.initialize();
   await startStandaloneServer(server, {
-    listen: { port: 4000 },
+    listen: { port: PORT },
   });
 })();
