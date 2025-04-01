@@ -4,7 +4,7 @@ function NotFoundRoot() {
   return (
     <div className={style.NotFoundRoot}>
       <h1>
-                Je suis dans la page NotFoundRoot
+        Je suis dans la page NotFoundRoot
       </h1>
     </div>
   );

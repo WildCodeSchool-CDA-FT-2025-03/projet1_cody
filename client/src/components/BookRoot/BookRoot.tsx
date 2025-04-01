@@ -4,7 +4,7 @@ function BookRoot() {
   return (
     <div className={style.BookRoot}>
       <h1>
-                Je suis dans la page Book
+        Je suis dans la page Book
       </h1>
     </div>
   );

@@ -4,7 +4,7 @@ function FooterRoot() {
   return (
     <div className={style.FooterRoot}>
       <h1>
-                Je suis dans la page Footer
+        Je suis dans la page Footer
       </h1>
     </div>
   );

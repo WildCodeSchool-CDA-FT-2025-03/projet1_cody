@@ -4,7 +4,7 @@ function NavRoot() {
   return (
     <div className={style.NavRoot}>
       <h1>
-                Je suis dans la page Nav
+        Je suis dans la page Nav
       </h1>
     </div>
   );
