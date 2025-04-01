@@ -1,3 +1,4 @@
+import { Length } from "class-validator";
 import { Field, ObjectType } from "type-graphql";
 import { Column, Entity, PrimaryGeneratedColumn, BaseEntity } from "typeorm";
 
@@ -20,7 +21,8 @@ export class Game extends BaseEntity {
   @Field()
   release_date: Date;
 
-  @Column()
+  @Column({ length: 50 })
+  @Length(0, 50)
   @Field()
   ISBN: string;
 
@@ -30,13 +32,17 @@ export class Game extends BaseEntity {
 
   @Column()
   @Field()
-  duration: string;
+  duration_min: number;
+
+  @Column()
+  @Field()
+  duration_max: number;
 
   @Column()
   @Field()
   summary: string;
 
-  @Column()
+  @Column({ length: 50 })
   @Field()
   target_audience: string;
 
@@ -56,11 +62,11 @@ export class Game extends BaseEntity {
   @Field()
   game_engine: string;
 
-  @Column()
+  @Column({ length: 50 })
   @Field()
   PEGI_ESRB_rating: string;
 
-  @Column()
+  @Column({ length: 3 })
   @Field()
   mod_support: string;
 }
