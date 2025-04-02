@@ -1,0 +1,155 @@
+.logoIcon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 1rem;
+  color: var(--color-yellow);
+}
+@media (min-width: 1024px) {
+  .logoIcon {
+    display: none;
+  }
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--color-navbar-bg);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+}
+@media (min-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 1rem 0.5rem;
+    background-color: transparent;
+    transition: width 0.3s ease;
+  }
+
+  .navbar:hover {
+    width: 12rem;
+    background-color: var(--color-navbar-bg);
+  }
+}
+
+.logoLink {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .logoLink {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.logoIconNav {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.logoTextNav {
+  display: none;
+}
+
+.navbar:hover .logoTextNav {
+  display: block;
+  width: auto;
+  height: 2.5rem;
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+@media (min-width: 1024px) {
+  .navLink {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.navLink:hover,
+.navLink:focus {
+  color: var(--color-yellow);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  color: var(--color-yellow);
+  transition: color 0.3s ease;
+}
+@media (min-width: 768px) {
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.icon img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.navLink:hover .icon img,
+.navLink:focus .icon img {
+  filter: brightness(0) saturate(100%) invert(83%) sepia(40%) saturate(705%) hue-rotate(330deg)
+    brightness(103%) contrast(107%);
+}
+
+.text {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .text {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    font-size: 0.875rem;
+  }
+
+  .navbar:hover .text {
+    display: block;
+    text-wrap: nowrap;
+    opacity: 1;
+  }
+}
