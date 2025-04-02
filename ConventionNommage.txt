@@ -1,5 +1,6 @@
 Côté client : 
-- Nom des dossier : camelCase
+- Nom des dossiers à la racine de src : camelCase
+- Nom des sous sous dossier src : PascalCase
 - Nom des fichiers tsx : PascalCase
 - Nom des fichiers .module.css : PascalCase
 - Nom des fonctions de composant tsx : PascalCase
