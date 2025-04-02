@@ -1,0 +1,51 @@
+.CardRoot {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); */
+    border-radius: 8px;
+}
+
+.ContainerImage {
+    aspect-ratio: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+.ContainerImage > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.ContainerText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+.Title {
+    font-size: var(--h2-size-tablet);
+    margin: 0.25rem 0rem;
+}
+
+.Year {
+    font-size: var(--h2-size-mobile);
+    margin: 0.25rem 0rem;
+}
