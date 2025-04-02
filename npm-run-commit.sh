@@ -55,9 +55,9 @@ echo ""
 trap "rm -f .gitmessage.txt" EXIT
 
 # Étape 2 : Retrait des fichiers en zone de staging
-# echo -e "\033[36m🗑️. Retrait des fichiers en zone de staging\033[0m"
-# git reset
-# echo ""
+echo -e "\033[36m🗑️. Retrait des fichiers en zone de staging\033[0m"
+git reset
+echo ""
 
 # Étape 3 : Vérification agent SSH
 # Emplacement du fichier pour stocker les informations de l'agent
