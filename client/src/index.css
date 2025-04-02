@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  /* Couleurs */
+  --color-yellow: #f7c201;
+  --color-white: #ffffff;
+  --color-navbar-bg: #1a1a1a;
+  --color-navbar-icon: #ffffff4d;
+  --color-input-bg: #ffffff26;
+  --color-input-text: #ffffff;
+  --color-border-card: #ffffff26;
+
+  /* Typographie */
+  --font-global: "Roboto", sans-serif;
+  --font-title: "Readex Pro", sans-serif;
+
+  /* Tailles de texte */
+  --h1-size-mobile: 1.125rem; /* 18px */
+  --h1-size-tablet: 1.5rem; /* 24px */
+  --h1-size-desktop: 3rem; /* 48px */
+  --h2-size-mobile: 1rem; /* 16px */
+  --h2-size-tablet: 1.25rem; /* 20px */
+  --h2-size-desktop: 2rem; /* 32px */
+  --h3-size-mobile: 0.875rem; /* 14px */
+  --h3-size-tablet: 1rem; /* 16px */
+  --h3-size-desktop: 1.5rem; /* 24px */
+  --p-desc-size: 1rem; /* 16px */
+  --p-comment-size: 0.875rem; /* 14px */
+  --span-size: 0.875rem; /* 14px */
+
+  /* Poids des polices */
+  --bold: 700;
+  --semi-bold: 600;
+  --medium: 500;
+  --regular: 400;
+  --light: 300;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: var(--font-global);
+  color: var(--color-white);
+  background: fixed linear-gradient(315deg, #1a1a1a 0%, #3a3416 50%, #1a1a1a 100%);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-title);
+}
+
+h1 {
+  font-size: var(--h1-size-mobile);
+  font-weight: var(--bold);
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--h1-size-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: var(--h1-size-desktop);
+  }
+}
+
+h2 {
+  font-size: var(--h2-size-mobile);
+  font-weight: var(--semi-bold);
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: var(--h2-size-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: var(--h2-size-desktop);
+  }
+}
+
+h3 {
+  font-size: var(--h3-size-mobile);
+  font-weight: var(--medium);
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: var(--h3-size-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  h3 {
+    font-size: var(--h3-size-desktop);
+  }
+}
+
+p,
+span {
+  font-weight: var(--regular);
+}
+
+p {
+  font-size: var(--p-desc-size);
+}
+
+span {
+  font-size: var(--span-size);
+}
