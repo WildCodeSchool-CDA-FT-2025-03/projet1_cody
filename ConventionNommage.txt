@@ -1,0 +1,21 @@
+Côté client : 
+- Nom des dossiers à la racine de src : camelCase
+- Nom des sous sous dossier src : PascalCase
+- Nom des fichiers tsx : PascalCase
+- Nom des fichiers .module.css : PascalCase
+- Nom des fonctions de composant tsx : PascalCase
+- Nom des className : PascalCase
+
+- Nom des variable : camelCase
+- Nom des Types : PascalCase
+- Nom des Interfaces : PascalCase
+
+Côté server : 
+- Nom des dossier : camelCase
+- Nom des fichiers ts : camelCase
+- Nom des fonctions dans un fichier : camelCase
+
+- Nom des variable : camelCase
+- Nom des Types : PascalCase
+- Nom des Interfaces : PascalCase
+- Nom des classes : PascalCase
