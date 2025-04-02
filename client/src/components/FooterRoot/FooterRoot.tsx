@@ -3,9 +3,9 @@ import style from "./FooterRoot.module.css";
 function FooterRoot() {
   return (
     <footer className={style.FooterRoot}>
-      <h1>
+      <p>
         Je suis dans la page Footer
-      </h1>
+      </p>
     </footer>
   );
 }
