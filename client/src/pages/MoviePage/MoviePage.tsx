@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import routerClient from "../../router/Router";
 
 import arrow from "../../assets/icons/arrow.svg";
+import searchIcon from "../../assets/icons/search.svg";
 import styles from "./MoviePage.module.css";
 
 function MoviePage() {
@@ -17,35 +18,38 @@ function MoviePage() {
         </div>
         {/* search bar and filters and sort by */}
         <div className={styles.searchAndFilters}>
-          <label htmlFor="search" className={styles.visuallyHidden}>
-            Rechercher un film
-          </label>
-          <input
-            className={styles.searchBar}
-            id="search"
-            type="text"
-            placeholder="Rechercher un film"
-          />
+          <div className={styles.searchBarContainer}>
+            <label htmlFor="search" className={styles.visuallyHidden}>
+              Rechercher un film
+            </label>
+            <input
+              className={styles.searchBar}
+              id="search"
+              type="text"
+              placeholder="Rechercher un film"
+            />
+            <img src={searchIcon} alt="Rechercher" className={styles.searchIcon} />
+          </div>
 
-          <div>
-            <select name="genre" id="genre">
+          <div className={styles.filtersContainer}>
+            <select className={styles.filters} name="genre" id="genre">
               <option value="all">Tous</option>
               <option value="action">Action</option>
               <option value="comedy">Comédie</option>
             </select>
 
-            <label htmlFor="sortBy">
+            <label htmlFor="sortBy" className={styles.sortByLabel}>
               Trier par
-              <select name="sortBy" id="sortBy">
-                <option value="title">Titre</option>
-                <option value="date">Date</option>
-                <option value="rating">Note</option>
-              </select>
             </label>
+            <select className={styles.sortBy} name="sortBy" id="sortBy">
+              <option value="title">Titre</option>
+              <option value="date">Date</option>
+              <option value="rating">Note</option>
+            </select>
           </div>
         </div>
         {/* movie list */}
-        <div>
+        <div className={styles.movieList}>
           <span>Film card à insérer ici</span>
         </div>
       </section>
