@@ -9,8 +9,8 @@ import {
 } from "typeorm";
 
 import { DlcExpansion } from "./dlc_expansion.entities";
-import { Platform } from "./platforms.entities";
-import { GameAwards } from "./game_awards.entities";
+import { Platform } from "./platform.entities";
+import { GameAward } from "./game_award.entities";
 import { GameCategory } from "./game_category.entities";
 
 @ObjectType()
@@ -117,9 +117,9 @@ export class Game extends BaseEntity {
   @ManyToMany(() => Platform, (platforms) => platforms.games)
   platforms: [Platform];
 
-  @Field(() => [GameAwards])
-  @ManyToMany(() => GameAwards, (game_awards) => game_awards.games)
-  game_awards: [GameAwards];
+  @Field(() => [GameAward])
+  @ManyToMany(() => GameAward, (game_awards) => game_awards.games)
+  game_awards: [GameAward];
 
   @Field(() => [GameCategory])
   @ManyToMany(() => GameCategory, (game_categories) => game_categories.games)

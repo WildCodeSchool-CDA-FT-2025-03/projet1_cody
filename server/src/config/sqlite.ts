@@ -1,9 +1,9 @@
 import { DataSource } from "typeorm";
 import { Game } from "../graphql/game/game.entities";
 import { DlcExpansion } from "../graphql/game/dlc_expansion.entities";
-import { GameAwards } from "../graphql/game/game_awards.entities";
+import { GameAward } from "../graphql/game/game_award.entities";
 import { GameCategory } from "../graphql/game/game_category.entities";
-import { Platform } from "../graphql/game/platforms.entities";
+import { Platform } from "../graphql/game/platform.entities";
 import { Movie } from "../graphql/movie/movie.entities";
 import { Book } from "../graphql/book/book.entities";
 
@@ -19,7 +19,7 @@ export const dataSource = new DataSource({
     Movie,
     Book,
     DlcExpansion,
-    GameAwards,
+    GameAward,
     GameCategory,
     Platform,
   ], // On placera nos modèles de données ici

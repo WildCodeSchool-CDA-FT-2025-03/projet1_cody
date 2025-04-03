@@ -11,7 +11,7 @@ import { Game } from "./game.entities";
 
 @ObjectType()
 @Entity()
-export class GameAwards extends BaseEntity {
+export class GameAward extends BaseEntity {
   @PrimaryGeneratedColumn()
   @Field()
   id: number;
