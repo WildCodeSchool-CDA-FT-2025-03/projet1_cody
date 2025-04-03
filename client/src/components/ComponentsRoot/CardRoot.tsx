@@ -2,7 +2,6 @@ import style from "./CardRoot.module.css";
 import CardDataType from "../../types/Card.type";
 
 function CardRoot({ title, image, alt, year }: CardDataType) {
-
   return (
     <article className={style.CardRoot}>
       <figure className={style.ContainerImage}>

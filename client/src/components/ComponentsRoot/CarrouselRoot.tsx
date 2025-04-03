@@ -50,15 +50,12 @@ function CarrouselRoot({ cards, h2 }: CarrouselRootProps) {
   return (
     <section className={style.CarrouselContainer}>
       <h2 className={style.Title}>{h2}</h2>
-
       {!start && (
         <button className={style.NavLeft} onClick={() => scrollBy(-660)}>◀</button>
       )}
-
       {!end && (
         <button className={style.NavRight} onClick={() => scrollBy(660)}>▶</button>
       )}
-
       <div className={style.CarrouselRoot} ref={scrollRef}>
         <div className={style.CarrouselWrapper}>
           {cards.map((card) => (
