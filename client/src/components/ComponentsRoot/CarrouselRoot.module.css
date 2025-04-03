@@ -1,51 +1,69 @@
 .CarrouselContainer {
-  position: relative;
-  width: 100%;
+    position: relative; /* Nécessaire pour positionner les flèches en absolu */
+    width: 100%;
 }
-
+  
+.Title {
+    width: calc(100% - 2rem);
+    text-align: start;
+    padding: 1rem;
+}
+  
 .CarrouselRoot {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    
+    overflow-x: auto; /* Scroll horizontal activé */
+    overflow-y: hidden; /* Bloque le scroll vertical */
+    scroll-behavior: smooth; /* Scroll fluide */
+    scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+    -ms-overflow-style: none; /* Cache la scrollbar sur IE */
 }
+  
+/* Cache la scrollbar sur Webkit (Chrome, Safari) */
 .CarrouselRoot::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
-
+  
 .CarrouselWrapper {
-  display: flex;
-  gap: 1rem;
-  padding: 0 1rem;
-  box-sizing: border-box;
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
-
+  
+/* Styles communs pour les flèches de navigation */
 .NavLeft,
 .NavRight {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: background-color 0.2s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Centre verticalement */
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s ease; /* Animation au survol */
 }
-
+  
+/* Hover : assombrit légèrement les flèches */
 .NavLeft:hover,
 .NavRight:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
-
+  
+/* Flèche gauche positionnée à gauche */
 .NavLeft {
-  left: 0;
+    left: 16px;
 }
-
+  
+/* Flèche droite positionnée à droite */
 .NavRight {
-  right: 0;
+    right: 16px;
 }
+  
