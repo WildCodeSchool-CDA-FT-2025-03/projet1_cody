@@ -1,6 +1,17 @@
 import { Length } from "class-validator";
 import { Field, ObjectType } from "type-graphql";
-import { Column, Entity, PrimaryGeneratedColumn, BaseEntity } from "typeorm";
+import {
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  BaseEntity,
+  ManyToMany,
+} from "typeorm";
+
+import { DlcExpansion } from "./dlc_expansion.entities";
+import { Platform } from "./platforms.entities";
+import { GameAwards } from "./game_awards.entities";
+import { GameCategory } from "./game_category.entities";
 
 @ObjectType()
 @Entity()
@@ -19,12 +30,20 @@ export class Game extends BaseEntity {
 
   @Column()
   @Field()
+  developers: string;
+
+  @Column()
+  @Field()
+  publishers: string;
+
+  @Column()
+  @Field()
   release_date: Date;
 
   @Column({ length: 50 })
   @Length(0, 50)
   @Field()
-  ISBN: string;
+  isbn: string;
 
   @Column()
   @Field()
@@ -41,6 +60,10 @@ export class Game extends BaseEntity {
   @Column()
   @Field()
   summary: string;
+
+  @Column()
+  @Field()
+  keywords: string;
 
   @Column({ length: 50 })
   @Field()
@@ -60,13 +83,45 @@ export class Game extends BaseEntity {
 
   @Column()
   @Field()
+  game_modes: string;
+
+  @Column()
+  @Field()
   game_engine: string;
 
   @Column({ length: 50 })
   @Field()
-  PEGI_ESRB_rating: string;
+  pegi_esbr_rating: string;
+
+  @Column()
+  @Field()
+  online_features: string;
+
+  @Column()
+  @Field()
+  gameplay_mechanics: string;
+
+  @Column()
+  @Field()
+  available_on: string;
 
   @Column({ length: 3 })
   @Field()
   mod_support: string;
+
+  @Field(() => [DlcExpansion])
+  @ManyToMany(() => DlcExpansion, (dlc_expansions) => dlc_expansions.games)
+  dlc_expansions: [DlcExpansion];
+
+  @Field(() => [Platform])
+  @ManyToMany(() => Platform, (platforms) => platforms.games)
+  platforms: [Platform];
+
+  @Field(() => [GameAwards])
+  @ManyToMany(() => GameAwards, (game_awards) => game_awards.games)
+  game_awards: [GameAwards];
+
+  @Field(() => [GameCategory])
+  @ManyToMany(() => GameCategory, (game_categories) => game_categories.games)
+  game_categories: [GameCategory];
 }
