@@ -3,47 +3,46 @@ import style from "./CarrouselRoot.module.css";
 import CardRoot from "./CardRoot";
 import CardDataType from "../../types/Card.type";
 
+// Définition du type des props
 type CarrouselRootProps = {
-  cards: CardDataType[];
-  h2: string;
+  cards: CardDataType[]; // Données des cartes à afficher
+  h2: string;            // Titre du carrousel
 };
 
 function CarrouselRoot({ cards, h2 }: CarrouselRootProps) {
-
-  // Référence vers le conteneur scrollable du carrousel
+  // 🔁 Référence à l'élément DOM scrollable du carrousel
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // État fusionné
-  const [scrollPosition, setScrollPosition] = useState({
-    start: true,
-    end: false,
-  });
+  const [[start, end], setScrollPosition] = useState<[boolean, boolean]>([true, false]);
 
+  // Fonction qui vérifie si on est au début ou à la fin du scroll
   const checkScrollPosition = () => {
     const el = scrollRef.current;
     if (el) {
       const atStart = el.scrollLeft === 0;
       const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
 
-      // Met à jour les deux d’un coup si changement
-      setScrollPosition((prev) => {
-        if (prev.start !== atStart || prev.end !== atEnd) {
-          return { start: atStart, end: atEnd };
+      // ✅ Mise à jour uniquement si une valeur a changé
+      setScrollPosition(([prevStart, prevEnd]) => {
+        if (prevStart !== atStart || prevEnd !== atEnd) {
+          return [atStart, atEnd];
         }
-        return prev; // Ne déclenche pas de re-render inutile
+        return [prevStart, prevEnd]; // Pas de changement, évite un re-render inutile
       });
     }
   };
 
+  // Dès le montage du composant, on vérifie la position et on écoute les scrolls
   useEffect(() => {
-    checkScrollPosition(); // Vérifie la position dès le chargement
+    checkScrollPosition(); // Vérifie une première fois
     const el = scrollRef.current;
-    el?.addEventListener("scroll", checkScrollPosition); // Ajoute l’écouteur
+    el?.addEventListener("scroll", checkScrollPosition); // Ajoute le listener
     return () => {
-      el?.removeEventListener("scroll", checkScrollPosition); // Nettoie l’écouteur au démontage
+      el?.removeEventListener("scroll", checkScrollPosition); // Nettoyage
     };
   }, []);
 
+  // Fonction déclenchée lors du clic sur les flèches pour faire défiler
   const scrollBy = (distance: number) => {
     scrollRef.current?.scrollBy({ left: distance, behavior: "smooth" });
   };
@@ -52,20 +51,18 @@ function CarrouselRoot({ cards, h2 }: CarrouselRootProps) {
     <section className={style.CarrouselContainer}>
       <h2 className={style.Title}>{h2}</h2>
 
-      {!scrollPosition.start && (
+      {!start && (
         <button className={style.NavLeft} onClick={() => scrollBy(-660)}>◀</button>
       )}
-      {!scrollPosition.end && (
+
+      {!end && (
         <button className={style.NavRight} onClick={() => scrollBy(660)}>▶</button>
       )}
 
       <div className={style.CarrouselRoot} ref={scrollRef}>
         <div className={style.CarrouselWrapper}>
           {cards.map((card) => (
-            <CardRoot
-              key={card.id}
-              {...card}
-            />
+            <CardRoot key={card.id} {...card} />
           ))}
         </div>
       </div>
