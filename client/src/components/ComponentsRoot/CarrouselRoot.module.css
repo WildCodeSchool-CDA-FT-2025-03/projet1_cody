@@ -1,0 +1,51 @@
+.CarrouselContainer {
+  position: relative;
+  width: 100%;
+}
+
+.CarrouselRoot {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.CarrouselRoot::-webkit-scrollbar {
+  display: none;
+}
+
+.CarrouselWrapper {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.NavLeft,
+.NavRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.NavLeft:hover,
+.NavRight:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.NavLeft {
+  left: 0;
+}
+
+.NavRight {
+  right: 0;
+}
