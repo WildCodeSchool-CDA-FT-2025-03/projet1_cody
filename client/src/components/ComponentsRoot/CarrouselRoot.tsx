@@ -3,17 +3,11 @@ import style from "./CarrouselRoot.module.css";
 import CardRoot from "./CardRoot";
 
 // Type d’une seule carte passée en props
-type CardData = {
-  id: number;
-  title: string;
-  image: string;
-  alt: string;
-  year: number;
-};
+import CardDataType from "../../types/Card.type";
 
 // Type des props globales du composant CarrouselRoot
 type CarrouselRootProps = {
-  cards: CardData[];
+  cards: CardDataType[];
   h2: string;
 };
 

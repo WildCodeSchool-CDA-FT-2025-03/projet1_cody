@@ -1,15 +1,7 @@
 import style from "./CardRoot.module.css";
+import CardDataType from "../../types/Card.type";
 
-type CardRootProps = {
-    title: string;
-    image: string;
-    alt: string;
-    year: number;
-
-}
-
-function CardRoot(Props: CardRootProps) {
-  const { title, image, alt, year } = Props;
+function CardRoot({ title, image, alt, year }: CardDataType) {
 
   return (
     <article className={style.CardRoot}>
