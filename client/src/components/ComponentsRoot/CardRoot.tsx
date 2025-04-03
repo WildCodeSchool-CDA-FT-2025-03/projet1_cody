@@ -8,7 +8,6 @@ function CardRoot({ title, image, alt, year }: CardDataType) {
       <figure className={style.ContainerImage}>
         <img src={image} alt={alt} />
       </figure>
-
       <div className={style.ContainerText}>
         <h1 className={style.Title}>{title}</h1>
         <p className={style.Year}>{year}</p>
