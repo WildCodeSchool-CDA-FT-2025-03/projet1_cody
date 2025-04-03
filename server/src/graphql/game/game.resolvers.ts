@@ -5,9 +5,12 @@ import { Resolver, Query, Arg } from "type-graphql";
 export default class GameResolvers {
   @Query(() => Game, { nullable: true })
   async getOneGameById(@Arg("id") id: string): Promise<Game | null> {
-    return await Game.findOne({
-      where: { id: parseInt(id) },
-    });
+    if (!isNaN(parseInt(id))) {
+      return await Game.findOne({
+        where: { id: parseInt(id) },
+      });
+    }
+    return null;
   }
 
   @Query(() => [Game])
