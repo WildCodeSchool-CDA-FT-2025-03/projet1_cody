@@ -1,4 +1,3 @@
-import { Length } from "class-validator";
 import { Field, ObjectType } from "type-graphql";
 import { Column, Entity, PrimaryGeneratedColumn, BaseEntity } from "typeorm";
 
@@ -21,10 +20,9 @@ export class Movie extends BaseEntity {
   @Field()
   release_date: Date;
 
-  @Column({ length: 50 })
-  @Length(0, 50)
+  @Column()
   @Field()
-  ISBN_EAN_UPC: string;
+  isbn_ean_upc: string;
 
   @Column()
   @Field()
@@ -42,7 +40,7 @@ export class Movie extends BaseEntity {
   @Field()
   summary: string;
 
-  @Column({ length: 50 })
+  @Column()
   @Field()
   targeted_audience: string;
 
