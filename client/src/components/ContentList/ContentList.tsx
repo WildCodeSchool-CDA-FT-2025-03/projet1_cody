@@ -6,7 +6,7 @@ interface ContentListProps {
 
 function ContentList({ contentType }: ContentListProps) {
   return (
-    <div className={styles.movieList}>
+    <div className={styles.contentList}>
       <span>Card à insérer ici pour {contentType}</span>
     </div>
   );

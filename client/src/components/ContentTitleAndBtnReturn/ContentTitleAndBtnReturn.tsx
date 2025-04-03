@@ -10,7 +10,7 @@ interface ContentTitleAndBtnReturnProps {
 
 function ContentTitleAndBtnReturn({ title }: ContentTitleAndBtnReturnProps) {
   return (
-    <div className={styles.moviePageHeader}>
+    <div className={styles.contentTitleAndBtnReturn}>
       <Link className={styles.arrow} to={`${routerClient[0].path}`}>
         <img src={arrow} alt="retour vers l'accueil" />
       </Link>

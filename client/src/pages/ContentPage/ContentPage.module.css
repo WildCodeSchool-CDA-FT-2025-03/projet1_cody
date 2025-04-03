@@ -1,11 +1,11 @@
-.moviePage {
+.contentPage {
   min-height: calc(100vh - 3rem);
   margin-top: 4rem;
-  padding: 0 1rem 0 1rem;
+  padding: 0 1rem;
 }
 @media (min-width: 1024px) {
-  .moviePage {
-    margin-top: 0rem;
-    padding: 0 5rem 0 5rem;
+  .contentPage {
+    margin-top: 0;
+    padding: 0 5rem;
   }
 }

@@ -49,7 +49,7 @@ function ContentPage({ contentType, title }: ContentPageProps) {
   const searchText = getSearchText() || "";
   return (
     <>
-      <section className={styles.moviePage}>
+      <section className={styles.contentPage}>
         <TitleAndBtnReturn title={title} />
         <SearchAndFilters genreOptions={getGenreOptions()} searchText={searchText} />
         <ContentList contentType={contentType} />
