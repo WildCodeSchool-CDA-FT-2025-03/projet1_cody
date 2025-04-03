@@ -11,9 +11,6 @@
   
 .CarrouselRoot {
     display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
     
     overflow-x: auto; /* Scroll horizontal activé */
     overflow-y: hidden; /* Bloque le scroll vertical */
