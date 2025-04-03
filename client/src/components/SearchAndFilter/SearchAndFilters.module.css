@@ -1,0 +1,80 @@
+.searchAndFilters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+
+.searchBarContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .searchBarContainer {
+    width: 50%;
+  }
+}
+
+.searchBar {
+  width: 100%;
+}
+
+.searchBar,
+.filters,
+.sortBy {
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--color-input-bg);
+  color: var(--color-input-text);
+}
+
+.searchIcon {
+  position: absolute;
+  right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.filtersContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .filtersContainer {
+    justify-content: flex-start;
+    width: 45%;
+  }
+}
+
+.filtersContainer select {
+  background-color: #45443a;
+}
+
+.sortByLabel {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sortByLabel {
+    display: block;
+  }
+}

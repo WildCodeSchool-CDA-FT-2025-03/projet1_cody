@@ -1,9 +1,7 @@
-import { Link } from "react-router-dom";
+import ContentList from "../../components/ContentList/ContentList";
+import SearchAndFilters from "../../components/SearchAndFilter/SearchAndFilters";
+import TitleAndBtnReturn from "../../components/ContentTitleAndBtnReturn/ContentTitleAndBtnReturn";
 
-import routerClient from "../../router/Router";
-
-import arrow from "../../assets/icons/arrow.svg";
-import searchIcon from "../../assets/icons/search.svg";
 import styles from "./ContentPage.module.css";
 
 interface ContentPageProps {
@@ -46,59 +44,19 @@ function ContentPage({ contentType, title }: ContentPageProps) {
     if (contentType === "movies") return "un film";
     if (contentType === "games") return "un jeu";
     if (contentType === "books") return "un livre";
-    return "une musique";
+    if (contentType === "music") return "une musique";
   };
 
-  const searchText = getSearchText();
+  const searchText = getSearchText() || "";
 
   return (
     <>
       <section className={styles.moviePage}>
-        <div className={styles.moviePageHeader}>
-          <Link className={styles.arrow} to={`${routerClient[0].path}`}>
-            <img src={arrow} alt="retour vers l'accueil" />
-          </Link>
-          <h2>{title}</h2>
-        </div>
-        {/* search bar and filters and sort by */}
-        <div className={styles.searchAndFilters}>
-          <div className={styles.searchBarContainer}>
-            <label htmlFor="search" className={styles.visuallyHidden}>
-              Rechercher {searchText}
-            </label>
-            <input
-              className={styles.searchBar}
-              id="search"
-              type="text"
-              placeholder={`Rechercher ${searchText}`}
-            />
-            <img src={searchIcon} alt="Rechercher" className={styles.searchIcon} />
-          </div>
+        <TitleAndBtnReturn title={title} />
 
-          <div className={styles.filtersContainer}>
-            <select className={styles.filters} name="genre" id="genre">
-              <option value="all">Tous</option>
-              {getGenreOptions().map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+        <SearchAndFilters genreOptions={getGenreOptions()} searchText={searchText} />
 
-            <label htmlFor="sortBy" className={styles.sortByLabel}>
-              Trier par
-            </label>
-            <select className={styles.sortBy} name="sortBy" id="sortBy">
-              <option value="title">Titre</option>
-              <option value="date">Date</option>
-              <option value="rating">Note</option>
-            </select>
-          </div>
-        </div>
-        {/* content list */}
-        <div className={styles.movieList}>
-          <span>Card à insérer ici</span>
-        </div>
+        <ContentList contentType={contentType} />
       </section>
     </>
   );
