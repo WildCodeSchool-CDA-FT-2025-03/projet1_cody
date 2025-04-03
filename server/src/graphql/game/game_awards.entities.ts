@@ -5,6 +5,7 @@ import {
   PrimaryGeneratedColumn,
   BaseEntity,
   ManyToMany,
+  JoinTable,
 } from "typeorm";
 import { Game } from "./game.entities";
 
@@ -21,5 +22,6 @@ export class GameAwards extends BaseEntity {
 
   @Field(() => [Game])
   @ManyToMany(() => Game, (games) => games.dlc_expansions)
+  @JoinTable()
   games: Game[];
 }
