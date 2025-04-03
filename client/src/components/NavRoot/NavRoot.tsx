@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import routerClient from "../../router/Router";
 
 import userIcon from "../../assets/icons/user.svg";
 import movieIcon from "../../assets/icons/movie.svg";
@@ -13,7 +14,7 @@ import style from "./NavRoot.module.css";
 function NavRoot() {
   const navItems = [
     { icon: userIcon, text: "Mon compte", path: "/" },
-    { icon: movieIcon, text: "Films", path: "/" },
+    { icon: movieIcon, text: "Films", path: `${routerClient[3].path}` },
     { icon: musicIcon, text: "Musique", path: "/" },
     { icon: gameIcon, text: "Jeux", path: "/" },
     { icon: bookIcon, text: "Livres", path: "/" },

@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import HomePage from "../pages/HomePage/HomePage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import BookPage from "../pages/BookPage/BookPage";
+import MoviePage from "../pages/MoviePage/MoviePage";
 
 interface RouterClientType {
   path: string;
@@ -16,15 +17,20 @@ const routerClient: RouterClientType[] = [
     path: "/",
     element: <HomePage />,
   },
-  /* {routerClient[3].path} */
+  /* {routerClient[1].path} */
   {
     path: "/not-found",
     element: <NotFoundPage />,
   },
-  /* {routerClient[4].path} */
+  /* {routerClient[2].path} */
   {
     path: "/book",
     element: <BookPage />,
+  },
+  /* {routerClient[3].path} */
+  {
+    path: "/movie",
+    element: <MoviePage />,
   },
 ];
 
