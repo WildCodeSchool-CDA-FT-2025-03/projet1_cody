@@ -39,7 +39,6 @@ function ContentPage({ contentType, title }: ContentPageProps) {
 
   const getGenreOptions = () => genreOptions[contentType] || [];
 
-  // Helper pour déterminer le texte de recherche selon le type de contenu
   const getSearchText = () => {
     if (contentType === "movies") return "un film";
     if (contentType === "games") return "un jeu";
@@ -48,14 +47,11 @@ function ContentPage({ contentType, title }: ContentPageProps) {
   };
 
   const searchText = getSearchText() || "";
-
   return (
     <>
       <section className={styles.moviePage}>
         <TitleAndBtnReturn title={title} />
-
         <SearchAndFilters genreOptions={getGenreOptions()} searchText={searchText} />
-
         <ContentList contentType={contentType} />
       </section>
     </>

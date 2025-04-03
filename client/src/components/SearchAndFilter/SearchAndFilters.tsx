@@ -27,7 +27,6 @@ function SearchAndFilters({ genreOptions, searchText }: SearchAndFiltersProps) {
         />
         <img src={searchIcon} alt="Rechercher" className={styles.searchIcon} />
       </div>
-
       <div className={styles.filtersContainer}>
         <select className={styles.filters} name="genre" id="genre">
           <option value="all">Tous</option>
@@ -37,7 +36,6 @@ function SearchAndFilters({ genreOptions, searchText }: SearchAndFiltersProps) {
             </option>
           ))}
         </select>
-
         <label htmlFor="sortBy" className={styles.sortByLabel}>
           Trier par
         </label>
