@@ -42,7 +42,10 @@ function CarrouselRoot({ cards, h2 }: CarrouselRootProps) {
     };
   }, []);
 
-  // Fonction déclenchée lors du clic sur les flèches pour faire défiler
+  /**
+ * Fonction déclenchée lors du clic sur les flèches pour faire défiler
+ * @param distance 
+ */
   const scrollBy = (distance: number) => {
     scrollRef.current?.scrollBy({ left: distance, behavior: "smooth" });
   };
