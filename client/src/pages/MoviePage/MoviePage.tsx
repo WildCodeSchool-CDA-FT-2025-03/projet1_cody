@@ -15,6 +15,39 @@ function MoviePage() {
           </Link>
           <h2>Films</h2>
         </div>
+        {/* search bar and filters and sort by */}
+        <div className={styles.searchAndFilters}>
+          <label htmlFor="search" className={styles.visuallyHidden}>
+            Rechercher un film
+          </label>
+          <input
+            className={styles.searchBar}
+            id="search"
+            type="text"
+            placeholder="Rechercher un film"
+          />
+
+          <div>
+            <select name="genre" id="genre">
+              <option value="all">Tous</option>
+              <option value="action">Action</option>
+              <option value="comedy">Comédie</option>
+            </select>
+
+            <label htmlFor="sortBy">
+              Trier par
+              <select name="sortBy" id="sortBy">
+                <option value="title">Titre</option>
+                <option value="date">Date</option>
+                <option value="rating">Note</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        {/* movie list */}
+        <div>
+          <span>Film card à insérer ici</span>
+        </div>
       </section>
     </>
   );
