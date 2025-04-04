@@ -26,7 +26,7 @@ function SearchAndFilters({
       onSearchChange(e.target.value);
     }
   };
-
+        
   return (
     <div className={styles.searchAndFilters}>
       <div className={styles.searchBarContainer}>
