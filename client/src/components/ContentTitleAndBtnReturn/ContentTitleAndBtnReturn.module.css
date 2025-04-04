@@ -1,0 +1,27 @@
+.contentTitleAndBtnReturn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+}
+
+.arrow {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+
+  .arrow img {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+  }
+}
