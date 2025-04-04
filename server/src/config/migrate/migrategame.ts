@@ -65,7 +65,6 @@ import { default as games } from "./games.json";
         return await newcategory.save();
       })
     );
-    console.error(resultcategory);
 
     const gameplatform = games.flatMap((game) => game.platforms);
     const uniqueplatform = [...new Set(gameplatform)];
@@ -77,7 +76,7 @@ import { default as games } from "./games.json";
       })
     );
 
-    const resultGames = await Promise.all(
+    await Promise.all(
       games.map(async (onegame) => {
         const newGame = new Game();
         newGame.title = onegame.title;
@@ -127,12 +126,7 @@ import { default as games } from "./games.json";
       })
     );
 
-    console.info("Save games", resultGames);
     await queryRunner.commitTransaction();
-    //console.error(uniquedlc);
-    //console.error(uniqueaward);
-    //console.error(uniquecategory);
-    //console.error(uniqueplatform);
   } catch (error) {
     console.error(error);
     await queryRunner.rollbackTransaction();
