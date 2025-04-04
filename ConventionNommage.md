@@ -102,8 +102,41 @@ Responsable de la branche:
 
 ### 12. Bonnes Pratiques
 
-Toujours s'assurer que les noms sont explicites.
+- Toujours s'assurer que les noms sont explicites.
 
-Éviter les abréviations inutiles (`usr` au lieu de `user`).
+- Éviter les abréviations inutiles (`usr` au lieu de `user`).
 
-Cohérence dans tout le projet.
+- Cohérence dans tout le projet.
+
+- Éviter le code mort : tout code inutilisé doit être supprimé.
+
+- Les @media doivent être directement placées à la suite de la classe concernée, sans saut de ligne.
+
+✅ Exemple correct :
+
+```
+.card {
+  padding: 1rem;
+  background-color: white;
+}
+@media (max-width: 768px) {
+  .card {
+    padding: 0.5rem;
+  }
+}
+```
+
+❌ Exemple incorrect :
+
+```
+.card {
+  padding: 1rem;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 0.5rem;
+  }
+}
+```
