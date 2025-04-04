@@ -5,17 +5,17 @@
     flex-direction: column;
     margin: 0;
     padding: 0;
-    width: 100px;
-    min-width: 100px;
+    width: 150px;
+    min-width: 150px;
     border-radius: 8px;
 }
-@media (min-width: 400px) {
+@media (min-width: 768px) {
     .CardRoot {
-        width: 150px;
-        min-width: 150px;
+        width: 175px;
+        min-width: 175px;
     }
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .CardRoot {
         width: 200px;
         min-width: 200px;
@@ -53,12 +53,39 @@
 }
 
 .Title {
-    /* font-size: var(--h2-size-tablet); */
-    /* font-size: var(--h2-size-tablet); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem; /* 12px */
     margin: 0.25rem 0;
+    text-align: center;
+    height: 1.875rem; /* 30px */
+}
+@media (min-width: 768px) {
+    .Title {
+        font-size: 0.875rem; /* 14px */
+        height: 2.1875rem; /* 35px */
+    }
+}
+@media (min-width: 1024px) {
+    .Title {
+        font-size: 1rem; /* 16px */
+        height: 2.5rem; /* 40px */
+
+    }
 }
 
 .Year {
-    /* font-size: var(--h2-size-mobile); */
+    font-size: 0.75rem; /* 12px */
     margin: 0.25rem 0;
+}
+@media (min-width: 768px) {
+    .Year {
+        font-size: 0.875rem; /* 14px */
+    }
+}
+@media (min-width: 1024px) {
+    .Year {
+        font-size: 1rem; /* 16px */
+    }
 }
