@@ -12,4 +12,5 @@ export type ContentByType = {
   music: CardDataType[];
   game: CardDataType[];
   book: CardDataType[];
+  "...": CardDataType[]; // Type par défaut pour les contenus non gérés
 };

@@ -23,7 +23,7 @@ function ContentPage({ contentType, title }: ContentPageProps) {
     if (contentType === ContentType.Games) return "un jeu";
     if (contentType === ContentType.Books) return "un livre";
     if (contentType === ContentType.Music) return "une musique";
-    return "";
+    return "...";
   };
 
   return (

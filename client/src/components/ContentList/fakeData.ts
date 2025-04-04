@@ -27,6 +27,7 @@ export const genreOptions = {
     { value: "jazz", label: "Jazz" },
     { value: "classical", label: "Classique" },
   ],
+  "...": [{ value: "unknown", label: "Type inconnu" }],
 };
 
 export const fakeData: ContentByType = {
@@ -122,6 +123,15 @@ export const fakeData: ContentByType = {
       image: Music,
       alt: "Couverture Crime et Châtiment",
       year: 1866,
+    },
+  ],
+  "...": [
+    {
+      id: 999,
+      title: "Type de contenu non géré",
+      image: Avenger,
+      alt: "Contenu non défini",
+      year: 2023,
     },
   ],
 };

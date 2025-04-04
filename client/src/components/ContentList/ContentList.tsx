@@ -27,8 +27,8 @@ function ContentList({
     if (contentType === ContentType.Games) return "game";
     if (contentType === ContentType.Books) return "book";
 
-    // Par défaut, retourner 'film' si le type n'est pas géré
-    return "film";
+    // Par défaut, retourner '...' si le type n'est pas géré
+    return "..." as keyof ContentByType;
   };
 
   const cardType = getCardType();
