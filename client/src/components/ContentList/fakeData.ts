@@ -1,6 +1,6 @@
 import { ContentByType } from "../../types/ContentType";
-import Music from "../../assets/images/music.jpeg";
-import Avenger from "../../assets/images/Avenger.jpg";
+import Music from "../../assets/images/inception.jpg";
+import Avenger from "../../assets/images/le-voyage-de-chihiro.jpg";
 
 export const genreOptions = {
   movies: [
