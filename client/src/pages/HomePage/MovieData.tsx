@@ -1,4 +1,4 @@
-import CardDataType from "../../types/Card.type";
+import CardDataType from "../../types/tCard.type";
 
 import image1 from "../../assets/images/inception.jpg";
 import image2 from "../../assets/images/le-parrain.jpg";
