@@ -1,7 +1,9 @@
+import { ContentType } from "../../types/ContentType";
+
 import styles from "./ContentList.module.css";
 
 type ContentListProps = {
-  contentType: "movies" | "games" | "books" | "music";
+  contentType: ContentType;
 };
 
 function ContentList({ contentType }: ContentListProps) {
