@@ -2,7 +2,7 @@ import CardRoot from "../ComponentsRoot/CardRoot";
 import { ContentType, ContentByType } from "../../types/ContentType";
 import { fakeData } from "./fakeData";
 import { useState, useEffect } from "react";
-import CardDataType from "../../types/Card.type";
+import CardDataType from "../../types/Old-card.type";
 
 import styles from "./ContentList.module.css";
 

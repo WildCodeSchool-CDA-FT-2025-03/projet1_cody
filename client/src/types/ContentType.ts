@@ -1,4 +1,4 @@
-import CardDataType from "./Card.type";
+import CardDataType from "./Old-card.type";
 
 export enum ContentType {
   Movies = "movies",
