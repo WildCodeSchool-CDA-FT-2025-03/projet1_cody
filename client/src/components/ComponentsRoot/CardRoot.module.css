@@ -53,11 +53,12 @@
 }
 
 .Title {
-    font-size: var(--h2-size-tablet);
+    /* font-size: var(--h2-size-tablet); */
+    /* font-size: var(--h2-size-tablet); */
     margin: 0.25rem 0;
 }
 
 .Year {
-    font-size: var(--h2-size-mobile);
+    /* font-size: var(--h2-size-mobile); */
     margin: 0.25rem 0;
 }
