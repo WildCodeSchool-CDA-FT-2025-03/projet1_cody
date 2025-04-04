@@ -21,7 +21,7 @@ export class GameCategory extends BaseEntity {
   name: string;
 
   @Field(() => [Game])
-  @ManyToMany(() => Game, (games) => games.dlc_expansions)
+  @ManyToMany(() => Game, (games) => games.game_categories)
   @JoinTable()
   games: Game[];
 }

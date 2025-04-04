@@ -2,6 +2,7 @@
   "scripts": {
     "compile": "tsc",
     "dev": "ts-node-dev ./src/index.ts",
+    "migrate": "ts-node-dev ./src/config/migrategame.ts",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix"
   },
