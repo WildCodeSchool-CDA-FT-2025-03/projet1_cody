@@ -6,7 +6,7 @@
 .Title {
     width: calc(100% - 2rem);
     text-align: start;
-    padding: 1rem;
+    padding: 0 1rem;
 }
   
 .CarrouselRoot {
@@ -16,6 +16,7 @@
     scroll-behavior: smooth; /* Scroll fluide */
     scrollbar-width: none; /* Cache la scrollbar sur Firefox */
     -ms-overflow-style: none; /* Cache la scrollbar sur IE */
+    padding: 1rem 0;
 }
   
 /* Cache la scrollbar sur Webkit (Chrome, Safari) */
@@ -45,6 +46,12 @@
     cursor: pointer;
     border-radius: 50%;
     transition: background-color 0.2s ease; /* Animation au survol */
+}
+@media (max-width: 768px) {
+    .NavLeft,
+    .NavRight {
+        display: none; /* Masque les flèches sur mobile */
+    }
 }
   
 /* Hover : assombrit légèrement les flèches */

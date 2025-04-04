@@ -1,5 +1,5 @@
 import style from "./CardRoot.module.css";
-import CardDataType from "../../types/Card.type";
+import CardDataType from "../../types/card.type";
 
 function CardRoot({ title, image, alt, year }: CardDataType) {
   return (
