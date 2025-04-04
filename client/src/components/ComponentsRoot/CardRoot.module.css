@@ -5,9 +5,21 @@
     flex-direction: column;
     margin: 0;
     padding: 0;
-    width: 200px;
-    min-width: 200px;
+    width: 100px;
+    min-width: 100px;
     border-radius: 8px;
+}
+@media (min-width: 400px) {
+    .CardRoot {
+        width: 150px;
+        min-width: 150px;
+    }
+}
+@media (min-width: 768px) {
+    .CardRoot {
+        width: 200px;
+        min-width: 200px;
+    }
 }
 
 .ContainerImage {
