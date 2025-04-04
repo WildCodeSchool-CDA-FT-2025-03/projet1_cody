@@ -79,7 +79,7 @@ const MovieData: CardDataType[] = [
   {
     id: 10,
     image: image10,
-    title: "Le Seigneur des Anneaux : La Communauté de l'Anneau",
+    title: "Le Seigneur des Anneaux",
     alt: "Le Seigneur des Anneaux : La Communauté de l'Anneau",
     year :2001
   },
