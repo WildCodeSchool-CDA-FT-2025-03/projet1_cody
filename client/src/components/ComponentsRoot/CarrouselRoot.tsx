@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import style from "./CarrouselRoot.module.css";
 import CardRoot from "./CardRoot";
-import CardDataType from "../../types/tCard.type";
+import CardDataType from "../../types/card.type";
 
 // Définition du type des props
 type CarrouselRootProps = {
