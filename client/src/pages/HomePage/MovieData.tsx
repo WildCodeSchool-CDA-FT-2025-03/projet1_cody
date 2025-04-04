@@ -1,4 +1,4 @@
-import CardDataType from "../../types/card.type";
+import CardDataType from "../../types/Old-card.type";
 
 import image1 from "../../assets/images/inception.jpg";
 import image2 from "../../assets/images/le-parrain.jpg";
@@ -81,15 +81,15 @@ const MovieData: CardDataType[] = [
     image: image10,
     title: "Le Seigneur des Anneaux",
     alt: "Le Seigneur des Anneaux : La Communauté de l'Anneau",
-    year :2001
+    year: 2001,
   },
   {
-    id :11 ,
-    image :image11 ,
-    title :"Le Roi Lion" ,
-    alt :"Le Roi Lion" ,
-    year :1994
-  }
+    id: 11,
+    image: image11,
+    title: "Le Roi Lion",
+    alt: "Le Roi Lion",
+    year: 1994,
+  },
 ];
 
 export default MovieData;

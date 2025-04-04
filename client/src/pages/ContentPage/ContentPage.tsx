@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 import ContentList from "../../components/ContentList/ContentList";
+import { genreOptions } from "../../components/ContentList/fakeData";
 import SearchAndFilters from "../../components/SearchAndFilter/SearchAndFilters";
 import TitleAndBtnReturn from "../../components/ContentTitleAndBtnReturn/ContentTitleAndBtnReturn";
 
@@ -11,39 +14,16 @@ type ContentPageProps = {
   title: string;
 };
 
-const genreOptions = {
-  movies: [
-    { value: "action", label: "Action" },
-    { value: "comedy", label: "Comédie" },
-    { value: "drama", label: "Drame" },
-    { value: "horror", label: "Horreur" },
-  ],
-  games: [
-    { value: "action", label: "Action" },
-    { value: "adventure", label: "Aventure" },
-    { value: "rpg", label: "RPG" },
-    { value: "strategy", label: "Stratégie" },
-  ],
-  books: [
-    { value: "fiction", label: "Fiction" },
-    { value: "non-fiction", label: "Non-fiction" },
-    { value: "biography", label: "Biographie" },
-    { value: "fantasy", label: "Fantasy" },
-  ],
-  music: [
-    { value: "rock", label: "Rock" },
-    { value: "pop", label: "Pop" },
-    { value: "jazz", label: "Jazz" },
-    { value: "classical", label: "Classique" },
-  ],
-};
-
 function ContentPage({ contentType, title }: ContentPageProps) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortOption, setSortOption] = useState("alphabetical");
+
   const getSearchText = () => {
-    if (contentType === "movies") return "un film";
-    if (contentType === "games") return "un jeu";
-    if (contentType === "books") return "un livre";
-    if (contentType === "music") return "une musique";
+    if (contentType === ContentType.Movies) return "un film";
+    if (contentType === ContentType.Games) return "un jeu";
+    if (contentType === ContentType.Books) return "un livre";
+    if (contentType === ContentType.Music) return "une musique";
+    return "...";
   };
 
   return (
@@ -51,10 +31,13 @@ function ContentPage({ contentType, title }: ContentPageProps) {
       <section className={styles.contentPage}>
         <TitleAndBtnReturn title={title} />
         <SearchAndFilters
+          searchText={getSearchText()}
+          searchValue={searchQuery}
+          onSearchChange={setSearchQuery}
           genreOptions={genreOptions[contentType] || []}
-          searchText={getSearchText() || ""}
+          onSortChange={setSortOption}
         />
-        <ContentList contentType={contentType} />
+        <ContentList contentType={contentType} sortOption={sortOption} searchQuery={searchQuery} />
       </section>
     </>
   );

@@ -1,3 +1,20 @@
 .contentList {
-  background-color: red;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .contentList {
+    margin: 2rem auto;
+    gap: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .contentList {
+    margin: 3rem auto;
+    gap: 3rem;
+  }
 }

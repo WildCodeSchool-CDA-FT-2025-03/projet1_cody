@@ -1,12 +1,12 @@
 import { useRef, useState, useEffect } from "react";
 import style from "./CarrouselRoot.module.css";
 import CardRoot from "./CardRoot";
-import CardDataType from "../../types/card.type";
+import CardDataType from "../../types/Old-card.type";
 
 // Définition du type des props
 type CarrouselRootProps = {
   cards: CardDataType[]; // Données des cartes à afficher
-  h2: string;            // Titre du carrousel
+  h2: string; // Titre du carrousel
 };
 
 function CarrouselRoot({ cards, h2 }: CarrouselRootProps) {
@@ -43,9 +43,9 @@ function CarrouselRoot({ cards, h2 }: CarrouselRootProps) {
   }, []);
 
   /**
- * Fonction déclenchée lors du clic sur les flèches pour faire défiler
- * @param distance 
- */
+   * Fonction déclenchée lors du clic sur les flèches pour faire défiler
+   * @param distance
+   */
   const scrollBy = (distance: number) => {
     scrollRef.current?.scrollBy({ left: distance, behavior: "smooth" });
   };
@@ -54,10 +54,14 @@ function CarrouselRoot({ cards, h2 }: CarrouselRootProps) {
     <section className={style.CarrouselContainer}>
       <h2 className={style.Title}>{h2}</h2>
       {!start && (
-        <button className={style.NavLeft} onClick={() => scrollBy(-660)}>◀</button>
+        <button className={style.NavLeft} onClick={() => scrollBy(-660)}>
+          ◀
+        </button>
       )}
       {!end && (
-        <button className={style.NavRight} onClick={() => scrollBy(660)}>▶</button>
+        <button className={style.NavRight} onClick={() => scrollBy(660)}>
+          ▶
+        </button>
       )}
       <div className={style.CarrouselRoot} ref={scrollRef}>
         <div className={style.CarrouselWrapper}>
