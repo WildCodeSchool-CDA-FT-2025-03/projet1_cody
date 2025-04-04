@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 import ContentList from "../../components/ContentList/ContentList";
+import { genreOptions } from "../../components/ContentList/fakeData";
 import SearchAndFilters from "../../components/SearchAndFilter/SearchAndFilters";
 import TitleAndBtnReturn from "../../components/ContentTitleAndBtnReturn/ContentTitleAndBtnReturn";
-import { genreOptions } from "../../components/ContentList/fakeData";
 
 import { ContentType } from "../../types/ContentType";
 
@@ -15,6 +15,7 @@ type ContentPageProps = {
 };
 
 function ContentPage({ contentType, title }: ContentPageProps) {
+  const [searchQuery, setSearchQuery] = useState("");
   const [sortOption, setSortOption] = useState("alphabetical");
 
   const getSearchText = () => {
@@ -31,10 +32,12 @@ function ContentPage({ contentType, title }: ContentPageProps) {
         <TitleAndBtnReturn title={title} />
         <SearchAndFilters
           searchText={getSearchText()}
+          searchValue={searchQuery}
+          onSearchChange={setSearchQuery}
           genreOptions={genreOptions[contentType] || []}
           onSortChange={setSortOption}
         />
-        <ContentList contentType={contentType} sortOption={sortOption} />
+        <ContentList contentType={contentType} sortOption={sortOption} searchQuery={searchQuery} />
       </section>
     </>
   );

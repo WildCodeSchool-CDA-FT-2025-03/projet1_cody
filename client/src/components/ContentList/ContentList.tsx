@@ -9,10 +9,16 @@ import styles from "./ContentList.module.css";
 type ContentListProps = {
   contentType: ContentType;
   sortOption?: string;
+  searchQuery?: string;
 };
 
-function ContentList({ contentType, sortOption = "alphabetical" }: ContentListProps) {
+function ContentList({
+  contentType,
+  sortOption = "alphabetical",
+  searchQuery = "",
+}: ContentListProps) {
   const [sortedContent, setSortedContent] = useState<CardDataType[]>([]);
+  const [filteredContent, setFilteredContent] = useState<CardDataType[]>([]);
 
   // Convertir le contentType en type interne
   const getCardType = (): keyof ContentByType => {
@@ -45,11 +51,26 @@ function ContentList({ contentType, sortOption = "alphabetical" }: ContentListPr
     }
   }, [sortOption, cardType]);
 
+  // Filtrer le contenu lorsque la recherche change
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setFilteredContent(sortedContent);
+    } else {
+      const lowercaseQuery = searchQuery.toLowerCase();
+      const filtered = sortedContent.filter((item) =>
+        item.title.toLowerCase().includes(lowercaseQuery)
+      );
+      setFilteredContent(filtered);
+    }
+  }, [searchQuery, sortedContent]);
+
   return (
     <div className={styles.contentList}>
-      {sortedContent.map((card) => (
-        <CardRoot key={card.id ?? card.title} {...card} />
-      ))}
+      {filteredContent.length === 0 ? (
+        <p className={styles.noResults}>Aucun résultat trouvé pour votre recherche</p>
+      ) : (
+        filteredContent.map((card) => <CardRoot key={card.id ?? card.title} {...card} />)
+      )}
     </div>
   );
 }

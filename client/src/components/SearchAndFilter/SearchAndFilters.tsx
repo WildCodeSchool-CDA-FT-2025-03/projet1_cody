@@ -1,3 +1,5 @@
+import { ChangeEvent } from "react";
+
 import { GenreType } from "../../types/GenreType";
 
 import searchIcon from "../../assets/icons/search.svg";
@@ -8,9 +10,23 @@ type SearchAndFiltersProps = {
   genreOptions: GenreType[];
   searchText: string;
   onSortChange: (sortOption: string) => void;
+  onSearchChange?: (searchValue: string) => void;
+  searchValue?: string;
 };
 
-function SearchAndFilters({ genreOptions, searchText, onSortChange }: SearchAndFiltersProps) {
+function SearchAndFilters({
+  searchText,
+  genreOptions,
+  onSearchChange,
+  onSortChange,
+  searchValue = "",
+}: SearchAndFiltersProps) {
+  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (onSearchChange) {
+      onSearchChange(e.target.value);
+    }
+  };
+
   return (
     <div className={styles.searchAndFilters}>
       <div className={styles.searchBarContainer}>
@@ -22,6 +38,8 @@ function SearchAndFilters({ genreOptions, searchText, onSortChange }: SearchAndF
           id="search"
           type="text"
           placeholder={`Rechercher ${searchText}`}
+          value={searchValue}
+          onChange={handleSearchChange}
         />
         <img src={searchIcon} alt="Rechercher" className={styles.searchIcon} />
       </div>
