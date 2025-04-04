@@ -1,8 +1,8 @@
 import styles from "./ContentList.module.css";
 
-interface ContentListProps {
+type ContentListProps = {
   contentType: "movies" | "games" | "books" | "music";
-}
+};
 
 function ContentList({ contentType }: ContentListProps) {
   return (

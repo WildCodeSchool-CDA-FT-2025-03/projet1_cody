@@ -11,15 +11,15 @@ import userIcon from "../../assets/icons/user.svg";
 
 import style from "./NavRoot.module.css";
 
-function NavRoot() {
-  const navItems = [
-    { icon: userIcon, text: "Mon compte", path: "/" },
-    { icon: movieIcon, text: "Films", path: `${routerClient[2].path}` },
-    { icon: musicIcon, text: "Musique", path: `${routerClient[3].path}` },
-    { icon: gameIcon, text: "Jeux", path: `${routerClient[4].path}` },
-    { icon: bookIcon, text: "Livres", path: `${routerClient[5].path}` },
-  ];
+const navItems = [
+  { icon: userIcon, text: "Mon compte", path: "/" },
+  { icon: movieIcon, text: "Films", path: routerClient[2].path },
+  { icon: musicIcon, text: "Musique", path: routerClient[3].path },
+  { icon: gameIcon, text: "Jeux", path: routerClient[4].path },
+  { icon: bookIcon, text: "Livres", path: routerClient[5].path },
+];
 
+function NavRoot() {
   return (
     <header className={style.NavRoot}>
       <Link to="/">

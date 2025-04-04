@@ -4,9 +4,9 @@ import routerClient from "../../router/Router";
 import arrow from "../../assets/icons/arrow.svg";
 import styles from "./ContentTitleAndBtnReturn.module.css";
 
-interface ContentTitleAndBtnReturnProps {
+type ContentTitleAndBtnReturnProps = {
   title: string;
-}
+};
 
 function ContentTitleAndBtnReturn({ title }: ContentTitleAndBtnReturnProps) {
   return (

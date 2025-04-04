@@ -2,43 +2,43 @@ import ContentList from "../../components/ContentList/ContentList";
 import SearchAndFilters from "../../components/SearchAndFilter/SearchAndFilters";
 import TitleAndBtnReturn from "../../components/ContentTitleAndBtnReturn/ContentTitleAndBtnReturn";
 
+import { ContentType } from "../../types/ContentType";
+
 import styles from "./ContentPage.module.css";
 
-interface ContentPageProps {
-  contentType: "movies" | "games" | "books" | "music";
+type ContentPageProps = {
+  contentType: ContentType;
   title: string;
-}
+};
+
+const genreOptions = {
+  movies: [
+    { value: "action", label: "Action" },
+    { value: "comedy", label: "Comédie" },
+    { value: "drama", label: "Drame" },
+    { value: "horror", label: "Horreur" },
+  ],
+  games: [
+    { value: "action", label: "Action" },
+    { value: "adventure", label: "Aventure" },
+    { value: "rpg", label: "RPG" },
+    { value: "strategy", label: "Stratégie" },
+  ],
+  books: [
+    { value: "fiction", label: "Fiction" },
+    { value: "non-fiction", label: "Non-fiction" },
+    { value: "biography", label: "Biographie" },
+    { value: "fantasy", label: "Fantasy" },
+  ],
+  music: [
+    { value: "rock", label: "Rock" },
+    { value: "pop", label: "Pop" },
+    { value: "jazz", label: "Jazz" },
+    { value: "classical", label: "Classique" },
+  ],
+};
 
 function ContentPage({ contentType, title }: ContentPageProps) {
-  const genreOptions = {
-    movies: [
-      { value: "action", label: "Action" },
-      { value: "comedy", label: "Comédie" },
-      { value: "drama", label: "Drame" },
-      { value: "horror", label: "Horreur" },
-    ],
-    games: [
-      { value: "action", label: "Action" },
-      { value: "adventure", label: "Aventure" },
-      { value: "rpg", label: "RPG" },
-      { value: "strategy", label: "Stratégie" },
-    ],
-    books: [
-      { value: "fiction", label: "Fiction" },
-      { value: "non-fiction", label: "Non-fiction" },
-      { value: "biography", label: "Biographie" },
-      { value: "fantasy", label: "Fantasy" },
-    ],
-    music: [
-      { value: "rock", label: "Rock" },
-      { value: "pop", label: "Pop" },
-      { value: "jazz", label: "Jazz" },
-      { value: "classical", label: "Classique" },
-    ],
-  };
-
-  const getGenreOptions = () => genreOptions[contentType] || [];
-
   const getSearchText = () => {
     if (contentType === "movies") return "un film";
     if (contentType === "games") return "un jeu";
@@ -46,12 +46,14 @@ function ContentPage({ contentType, title }: ContentPageProps) {
     if (contentType === "music") return "une musique";
   };
 
-  const searchText = getSearchText() || "";
   return (
     <>
       <section className={styles.contentPage}>
         <TitleAndBtnReturn title={title} />
-        <SearchAndFilters genreOptions={getGenreOptions()} searchText={searchText} />
+        <SearchAndFilters
+          genreOptions={genreOptions[contentType] || []}
+          searchText={getSearchText() || ""}
+        />
         <ContentList contentType={contentType} />
       </section>
     </>

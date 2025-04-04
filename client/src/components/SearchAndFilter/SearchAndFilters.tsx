@@ -1,16 +1,13 @@
+import { GenreType } from "../../types/GenreType";
+
 import searchIcon from "../../assets/icons/search.svg";
 
 import styles from "./SearchAndFilters.module.css";
 
-interface Genre {
-  value: string;
-  label: string;
-}
-
-interface SearchAndFiltersProps {
-  genreOptions: Genre[];
+type SearchAndFiltersProps = {
+  genreOptions: GenreType[];
   searchText: string;
-}
+};
 
 function SearchAndFilters({ genreOptions, searchText }: SearchAndFiltersProps) {
   return (
@@ -28,6 +25,9 @@ function SearchAndFilters({ genreOptions, searchText }: SearchAndFiltersProps) {
         <img src={searchIcon} alt="Rechercher" className={styles.searchIcon} />
       </div>
       <div className={styles.filtersContainer}>
+        <label htmlFor="genre" className={styles.visuallyHidden}>
+          Filtrer par genre
+        </label>
         <select className={styles.filters} name="genre" id="genre">
           <option value="all">Tous</option>
           {genreOptions.map((option) => (
