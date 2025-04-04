@@ -1,9 +1,9 @@
-import { dataSource } from "./sqlite";
-import { Game } from "../graphql/game/game.entities";
-import { DlcExpansion } from "../graphql/game/dlc_expansion.entities";
-import { GameAward } from "../graphql/game/game_award.entities";
-import { GameCategory } from "../graphql/game/game_category.entities";
-import { Platform } from "../graphql/game/platform.entities";
+import { dataSource } from "../sqlite";
+import { Game } from "../../graphql/game/game.entities";
+import { DlcExpansion } from "../../graphql/game/dlc_expansion.entities";
+import { GameAward } from "../../graphql/game/game_award.entities";
+import { GameCategory } from "../../graphql/game/game_category.entities";
+import { Platform } from "../../graphql/game/platform.entities";
 import { default as games } from "./games.json";
 
 (async () => {
