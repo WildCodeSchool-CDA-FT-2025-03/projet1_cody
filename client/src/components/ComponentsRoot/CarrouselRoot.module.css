@@ -46,6 +46,12 @@
     border-radius: 50%;
     transition: background-color 0.2s ease; /* Animation au survol */
 }
+@media (max-width: 768px) {
+    .NavLeft,
+    .NavRight {
+        display: none; /* Masque les flèches sur mobile */
+    }
+}
   
 /* Hover : assombrit légèrement les flèches */
 .NavLeft:hover,
