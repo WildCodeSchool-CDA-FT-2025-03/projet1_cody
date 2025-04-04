@@ -111,17 +111,17 @@ export class Game extends BaseEntity {
 
   @Field(() => [DlcExpansion])
   @ManyToMany(() => DlcExpansion, (dlc_expansions) => dlc_expansions.games)
-  dlc_expansions: [DlcExpansion];
+  dlc_expansions: DlcExpansion[];
 
   @Field(() => [Platform])
   @ManyToMany(() => Platform, (platforms) => platforms.games)
-  platforms: [Platform];
+  platforms: Platform[];
 
   @Field(() => [GameAward])
   @ManyToMany(() => GameAward, (game_awards) => game_awards.games)
-  game_awards: [GameAward];
+  game_awards: GameAward[];
 
   @Field(() => [GameCategory])
   @ManyToMany(() => GameCategory, (game_categories) => game_categories.games)
-  game_categories: [GameCategory];
+  game_categories: GameCategory[];
 }
