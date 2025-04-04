@@ -7,9 +7,10 @@ import styles from "./SearchAndFilters.module.css";
 type SearchAndFiltersProps = {
   genreOptions: GenreType[];
   searchText: string;
+  onSortChange: (sortOption: string) => void;
 };
 
-function SearchAndFilters({ genreOptions, searchText }: SearchAndFiltersProps) {
+function SearchAndFilters({ genreOptions, searchText, onSortChange }: SearchAndFiltersProps) {
   return (
     <div className={styles.searchAndFilters}>
       <div className={styles.searchBarContainer}>
@@ -39,10 +40,16 @@ function SearchAndFilters({ genreOptions, searchText }: SearchAndFiltersProps) {
         <label htmlFor="sortBy" className={styles.sortByLabel}>
           Trier par
         </label>
-        <select className={styles.sortBy} name="sortBy" id="sortBy">
-          <option value="title">Titre</option>
-          <option value="date">Date</option>
-          <option value="rating">Note</option>
+        <select
+          className={styles.sortBy}
+          name="sortBy"
+          id="sortBy"
+          onChange={(e) => onSortChange(e.target.value)}
+        >
+          <option value="alphabetical">Ordre alphabétique</option>
+          <option value="alphabetical-reverse">Ordre alphabétique inverse</option>
+          <option value="date-recent">Plus récent</option>
+          <option value="date-old">Plus ancien</option>
         </select>
       </div>
     </div>

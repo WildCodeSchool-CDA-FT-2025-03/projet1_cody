@@ -2,6 +2,33 @@ import { ContentByType } from "../../types/ContentType";
 import Music from "../../assets/images/music.jpeg";
 import Avenger from "../../assets/images/Avenger.jpg";
 
+export const genreOptions = {
+  movies: [
+    { value: "action", label: "Action" },
+    { value: "comedy", label: "Comédie" },
+    { value: "drama", label: "Drame" },
+    { value: "horror", label: "Horreur" },
+  ],
+  games: [
+    { value: "action", label: "Action" },
+    { value: "adventure", label: "Aventure" },
+    { value: "rpg", label: "RPG" },
+    { value: "strategy", label: "Stratégie" },
+  ],
+  books: [
+    { value: "fiction", label: "Fiction" },
+    { value: "non-fiction", label: "Non-fiction" },
+    { value: "biography", label: "Biographie" },
+    { value: "fantasy", label: "Fantasy" },
+  ],
+  music: [
+    { value: "rock", label: "Rock" },
+    { value: "pop", label: "Pop" },
+    { value: "jazz", label: "Jazz" },
+    { value: "classical", label: "Classique" },
+  ],
+};
+
 export const fakeData: ContentByType = {
   film: [
     { id: 1, title: "Avenger", image: Avenger, alt: "Affiche Avenger", year: 2012 },
