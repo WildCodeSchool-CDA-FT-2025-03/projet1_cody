@@ -3277,7 +3277,9 @@
     "game_modes": ["Solo", "Coopératif"],
     "game_engine": "Source Engine",
     "PEGI_ESRB_rating": "PEGI 12 / ESRB E10+",
-    "online_features": ["Mode coopératif en ligne, éditeur de niveaux communautaire"],
+    "online_features": [
+      "Mode coopératif en ligne, éditeur de niveaux communautaire"
+    ],
     "dlc_expansions": ["Peer Review", "Perpetual Testing Initiative"],
     "gameplay_mechanics": [
       "Portails",
