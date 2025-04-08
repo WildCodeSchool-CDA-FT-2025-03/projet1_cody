@@ -1,4 +1,3 @@
-import { Length } from "class-validator";
 import { Field, ObjectType } from "type-graphql";
 import {
   Column,
@@ -49,7 +48,6 @@ export class Album extends BaseEntity {
   release_date: Date;
 
   @Column({ length: 50 })
-  @Length(0, 50)
   @Field()
   isbn: string;
 
