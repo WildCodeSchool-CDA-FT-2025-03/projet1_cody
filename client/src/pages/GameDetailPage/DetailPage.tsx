@@ -6,6 +6,7 @@ import {
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import DetailRoot from "../../components/DetailRoot/DetailRoot";
+import SpecificField from "../../components/SpecificField/SpecificField";
 
 import { DetailContentType } from "../../types/DetailContentType";
 
@@ -17,6 +18,13 @@ const GET_ALL_GAME = gql`
     summary
     developers
     publishers
+    game_awards {
+      name
+    }
+    game_categories {
+      name
+    }
+    pegi_esbr_rating
   }
 }
 `;
@@ -28,9 +36,18 @@ type getOneGame = {
     summary: string;
     developers: string;
     publishers: string;
+    game_awards: {
+      name: string;
+    }[];
+    game_categories: {
+      name: string;
+    }[];
+    pegi_esbr_rating: string;
   };
 };
 
+
+const specificField = ["publishers", "developers"];
 function GameDetailPage() {
   const { id } = useParams();
 
@@ -46,23 +63,29 @@ function GameDetailPage() {
     duration_min: data?.getOneGameById.duration_min || 0,
     summary: data?.getOneGameById.summary || "",
     year: 0,
-    awards: "",
-    cateregory: ["test"],
-    other: [
-      {
-        name_title_other: "Développeurs",
-        value_title_other: data?.getOneGameById.developers || "",
-      },
-      {
-        name_title_other: "Editeurs",
-        value_title_other: data?.getOneGameById.publishers || "",
-      },
-    ],
+    awards: [],
+    cateregory: []
+  };
+
+  data?.getOneGameById.game_awards.forEach((a,index) => {
+    contentType.awards[index] = a;
+  });
+  data?.getOneGameById.game_categories.forEach((c,index) => {
+    contentType.cateregory[index] = c;
+  });
+
+  const getField = (data: getOneGame | undefined, specificField : string[])  => {
+    const result: Record<string, string> = {};
+    specificField.forEach(fd => {
+      result[fd] = data?.getOneGameById[fd as keyof typeof data.getOneGameById] as string;
+    });
+    return result;
   };
 
   return (
     <main className={CSSTargetPage.Main}>
       <DetailRoot data={contentType} />
+      <SpecificField data={getField(data, specificField)} />
     </main>
   );
 }
