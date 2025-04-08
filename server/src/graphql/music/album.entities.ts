@@ -10,7 +10,7 @@ import {
 } from "typeorm";
 
 import { Track } from "./track.entities";
-import { Artist } from "./artitst.entities";
+import { Artist } from "./artist.entities";
 import { AlbumCategory } from "./album_category.entities";
 
 @ObjectType()
