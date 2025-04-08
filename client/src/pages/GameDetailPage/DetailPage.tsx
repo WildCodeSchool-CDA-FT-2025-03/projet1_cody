@@ -8,8 +8,6 @@ import { useQuery } from "@apollo/client";
 import DetailRoot from "../../components/DetailRoot/DetailRoot";
 import SpecificField from "../../components/SpecificField/SpecificField";
 
-import { DetailContentType } from "../../types/DetailContentType";
-
 const GET_ALL_GAME = gql`
   query GetOneGameById($id: String!) {
   getOneGameById(id: $id) {
@@ -58,20 +56,13 @@ function GameDetailPage() {
   if (loading) return <p>Loading in progress...</p>;
   if (error) return <p>There might be an issue</p>;
 
-  const contentType: DetailContentType = {
-    title: data?.getOneGameById.title || "",
-    duration_min: data?.getOneGameById.duration_min || 0,
-    summary: data?.getOneGameById.summary || "",
-    year: 0,
-    awards: [],
-    cateregory: []
-  };
-
+  const myawards : string[] = [];
   data?.getOneGameById.game_awards.forEach((a,index) => {
-    contentType.awards[index] = a;
+    myawards[index] = a.name;
   });
+  const mycategory : string[] = [];
   data?.getOneGameById.game_categories.forEach((c,index) => {
-    contentType.cateregory[index] = c;
+    mycategory[index] = c.name;
   });
 
   const getField = (data: getOneGame | undefined, specificField : string[])  => {
@@ -84,7 +75,13 @@ function GameDetailPage() {
 
   return (
     <main className={CSSTargetPage.Main}>
-      <DetailRoot data={contentType} />
+      <DetailRoot 
+        title={data?.getOneGameById.title || ""} 
+        year={0} 
+        duration={data?.getOneGameById.duration_min || 0} 
+        summary={data?.getOneGameById.summary || ""} 
+        awards={myawards} 
+        category={mycategory} />
       <SpecificField data={getField(data, specificField)} />
     </main>
   );

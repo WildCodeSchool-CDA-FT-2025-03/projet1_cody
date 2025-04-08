@@ -1,26 +1,25 @@
 import style from "./DetailRoot.module.css";
-import { DetailContentType } from "../../types/DetailContentType";
 
-function DetailRoot({data}: { data: DetailContentType }) {
+function DetailRoot({title, year, duration, summary, awards, category}: { title: string; year: number; duration: number; summary: string; awards: string[]; category: string[] }) {
   return (
     <section className={style.container}>
       <p className={style.detailpicture}>Photo</p>
       <div className={style.detailtitle}>
-        <h1>{data?.title}</h1>
-        <h2 className={style.detailyear}>{data?.year} {data?.duration_min}</h2>
+        <h1>{title}</h1>
+        <h2 className={style.detailyear}>{year} {duration}</h2>
       </div>
       <ul className={style.detailaward}>
-        {data?.awards.map((item, index) => (
+        {awards.map((item, index) => (
           <li key={index} className={style.detailawarditem}>
-            {item.name}
+            {item}
           </li>
         ))}
       </ul>
-      <p className={style.detailsummary}>{data?.summary}</p>
+      <p className={style.detailsummary}>{summary}</p>
       <ul className={style.detailcategorie}>
-        {data?.cateregory.map((item, index) => (
+        {category.map((item, index) => (
           <li key={index} className={style.detailcategorieitem}>
-            {item.name}
+            {item}
           </li>
         ))}
       </ul>
