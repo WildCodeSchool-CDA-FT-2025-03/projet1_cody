@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App.tsx";
 import routerClient from "./router/Router.tsx";
+import { ApolloProvider } from "@apollo/client";
+import client from "./services/apolloClient";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,8 @@ if (rootElement == null) {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ApolloProvider client={client}>
+      <RouterProvider router={router} />
+    </ApolloProvider>
   </StrictMode>
 );
