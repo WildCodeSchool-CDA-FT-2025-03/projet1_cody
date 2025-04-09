@@ -6,6 +6,7 @@ import {
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import DetailRoot from "../../components/DetailRoot/DetailRoot";
+import SpecificField from "../../components/SpecificField/SpecificField";
 
 const GET_ALL_GAME = gql`
   query GetOneGameById($id: String!) {
@@ -72,14 +73,16 @@ function GameDetailPage() {
 
   return (
     <main className={CSSTargetPage.Main}>
-      <DetailRoot 
-        title={data?.getOneGameById.title || ""} 
-        year={0} 
-        duration={data?.getOneGameById.duration_min || 0} 
-        summary={data?.getOneGameById.summary || ""} 
-        awards={myawards} 
-        category={mycategory}
-        dataSpecific={getField(data, specificField)}/>
+      <div className={CSSTargetPage.container}>
+        <DetailRoot 
+          title={data?.getOneGameById.title || ""} 
+          year={0} 
+          duration={data?.getOneGameById.duration_min || 0} 
+          summary={data?.getOneGameById.summary || ""} 
+          awards={myawards} 
+          category={mycategory}/>
+        <SpecificField data={getField(data, specificField)} />
+      </div>
     </main>
   );
 }

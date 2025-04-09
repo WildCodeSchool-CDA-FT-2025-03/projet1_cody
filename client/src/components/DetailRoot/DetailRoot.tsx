@@ -1,9 +1,8 @@
-import SpecificField from "../SpecificField/SpecificField";
 import style from "./DetailRoot.module.css";
 
-function DetailRoot({title, year, duration, summary, awards, category, dataSpecific}: { title: string; year: number; duration: number; summary: string; awards: string[]; category: string[]; dataSpecific: Record<string, string> }) {
+function DetailRoot({title, year, duration, summary, awards, category}: { title: string; year: number; duration: number; summary: string; awards: string[]; category: string[] }) {
   return (
-    <section className={style.container}>
+    <section className={style.containerComponent}>
       <image className={style.detailPicture}>Photo</image>
       <div className={style.detailTitle}>
         <h1>{title}</h1>
@@ -24,7 +23,6 @@ function DetailRoot({title, year, duration, summary, awards, category, dataSpeci
           </li>
         ))}
       </ul>
-      <SpecificField data={dataSpecific} />
     </section>
   );
 }
