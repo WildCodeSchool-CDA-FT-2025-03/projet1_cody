@@ -11,6 +11,7 @@ import MovieResolvers from "./graphql/movie/movie.resolvers";
 import MusicResolver from "./graphql/music/music.resolvers";
 import UserResolvers from "./graphql/user/user.resolvers";
 import ReviewResolvers from "./graphql/review/review.resolvers";
+import GeneralResolvers from "./graphql/general/general.resolvers";
 
 const PORT = parseInt(process.env.PORT_SERVER) || 3000;
 
@@ -24,6 +25,7 @@ const PORT = parseInt(process.env.PORT_SERVER) || 3000;
       MusicResolver,
       UserResolvers,
       ReviewResolvers,
+      GeneralResolvers,
     ],
   });
   const server = new ApolloServer({
