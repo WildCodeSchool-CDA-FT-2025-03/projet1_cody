@@ -63,11 +63,7 @@ function ContentList({
         setSortedContent(contentToDisplay?.sort((a, b) => a.title.localeCompare(b.title)));
       } else if (sortOption === "alphabetical-reverse") {
         setSortedContent(contentToDisplay?.sort((a, b) => b.title.localeCompare(a.title)));
-      } /*else if (sortOption === "date-recent") {
-        setSortedContent(contentToDisplay?.sort((a, b) => b.year - a.year));
-      } else if (sortOption === "date-old") {
-        setSortedContent(contentToDisplay?.sort((a, b) => a.year - b.year));
-      } */else {
+      } else {
         setSortedContent(contentToDisplay);
       }
     }
