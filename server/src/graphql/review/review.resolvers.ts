@@ -1,10 +1,10 @@
-import { Review } from "./review.entities";
-import { Resolver, Query } from "type-graphql";
+import { ReviewMovie } from "./reviewMovie.entities";
+import { Resolver, Query, Arg } from "type-graphql";
 
-@Resolver(Review)
+@Resolver(ReviewMovie)
 export default class ReviewResolvers {
-  @Query(() => [Review])
-  async getReview(): Promise<Review[]> {
-    return await Review.find();
+  @Query(() => ReviewMovie)
+  async getReviewMovie(@Arg("id") id: number): Promise<ReviewMovie> {
+    return await ReviewMovie.findOne({ where: { id } });
   }
 }

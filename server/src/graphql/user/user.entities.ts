@@ -6,7 +6,7 @@ import {
   BaseEntity,
   OneToMany,
 } from "typeorm";
-import { Review } from "../review/review.entities";
+import { ReviewMovie } from "../review/reviewMovie.entities";
 
 @ObjectType()
 @Entity()
@@ -27,7 +27,7 @@ export class User extends BaseEntity {
   @Field()
   isAdmin: boolean;
 
-  @Field(() => [Review])
-  @OneToMany(() => Review, (review) => review.user)
-  reviews: Review[];
+  @Field(() => [ReviewMovie])
+  @OneToMany(() => ReviewMovie, (review) => review.user)
+  reviews: ReviewMovie[];
 }

@@ -10,7 +10,7 @@ import {
 import { MovieCategory } from "./movie_category.entities";
 import { MovieAward } from "./movie_award.entities";
 import { MovieActors } from "./movie_actors.entities";
-import { Review } from "../review/review.entities";
+import { ReviewMovie } from "../review/reviewMovie.entities";
 
 @ObjectType()
 @Entity()
@@ -106,7 +106,7 @@ export class Movie extends BaseEntity {
   @ManyToMany(() => MovieActors, (movie_actors) => movie_actors.movies)
   movie_actors: MovieActors[];
 
-  @Field(() => [Review])
-  @OneToMany(() => Review, (review) => review.movie)
-  reviews: Review[];
+  @Field(() => [ReviewMovie])
+  @OneToMany(() => ReviewMovie, (review) => review.movie)
+  reviews: ReviewMovie[];
 }

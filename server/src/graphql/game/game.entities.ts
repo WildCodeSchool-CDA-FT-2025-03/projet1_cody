@@ -6,14 +6,12 @@ import {
   PrimaryGeneratedColumn,
   BaseEntity,
   ManyToMany,
-  OneToMany,
 } from "typeorm";
 
 import { DlcExpansion } from "./dlc_expansion.entities";
 import { Platform } from "./platform.entities";
 import { GameAward } from "./game_award.entities";
 import { GameCategory } from "./game_category.entities";
-import { Review } from "../review/review.entities";
 
 @ObjectType()
 @Entity()
@@ -126,8 +124,4 @@ export class Game extends BaseEntity {
   @Field(() => [GameCategory])
   @ManyToMany(() => GameCategory, (game_categories) => game_categories.games)
   game_categories: GameCategory[];
-
-  @Field(() => [Review])
-  @OneToMany(() => Review, (review) => review.game)
-  reviews: Review[];
 }

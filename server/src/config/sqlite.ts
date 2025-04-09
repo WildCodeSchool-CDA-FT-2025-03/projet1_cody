@@ -23,7 +23,7 @@ import { AlbumCategory } from "../graphql/music/album_category.entities";
 import { User } from "../graphql/user/user.entities";
 
 // Review
-import { Review } from "../graphql/review/review.entities";
+import { ReviewMovie } from "../graphql/review/reviewMovie.entities";
 
 import "dotenv/config";
 
@@ -47,7 +47,7 @@ export const dataSource = new DataSource({
     Artist,
     AlbumCategory,
     User,
-    Review,
+    ReviewMovie,
   ], // On placera nos modèles de données ici
   synchronize: isDev, // Propriété de stratégie de synchronisation (ici, l'on synchronise à chaque fois que l'on lance le projet) ! Ne pas laisser en prod
   logging: isDev,
