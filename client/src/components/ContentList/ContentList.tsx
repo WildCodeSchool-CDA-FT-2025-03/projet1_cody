@@ -1,6 +1,6 @@
 import CardRoot from "../ComponentsRoot/CardRoot";
 import { ContentType, ContentByType } from "../../types/ContentType";
-import { useQuery, gql } from "@apollo/client";
+import { fakeData } from "./fakeData";
 import { useState, useEffect } from "react";
 import CardDataType from "../../types/Old-card.type";
 
@@ -33,45 +33,23 @@ function ContentList({
 
   const cardType = getCardType();
 
-  const GET_ALL_RESSOURCE = gql`
-    query GetAll($name: String!) {
-      getAll(name: $name) {
-        id
-        image_url
-        image_alt
-        title
-      }
-    }
-  `;
-  
-  type getAllRessource = {
-    getAll: CardDataType[];
-  };
-
-  const { loading, error, data } = useQuery<getAllRessource>(GET_ALL_RESSOURCE, {
-    variables: { name: cardType },
-  });
-
   // Appliquer le tri lorsque les options de tri ou le contenu changent
   useEffect(() => {
-    if(data?.getAll !== undefined)
-    {
-      const contentToDisplay = [...(data?.getAll ?? [])];
-      
-      // Appliquer le tri
-      if (sortOption === "alphabetical") {
-        setSortedContent(contentToDisplay?.sort((a, b) => a.title.localeCompare(b.title)));
-      } else if (sortOption === "alphabetical-reverse") {
-        setSortedContent(contentToDisplay?.sort((a, b) => b.title.localeCompare(a.title)));
-      } /*else if (sortOption === "date-recent") {
-        setSortedContent(contentToDisplay?.sort((a, b) => b.year - a.year));
-      } else if (sortOption === "date-old") {
-        setSortedContent(contentToDisplay?.sort((a, b) => a.year - b.year));
-      } */else {
-        setSortedContent(contentToDisplay);
-      }
+    const contentToDisplay = [...fakeData[cardType]];
+
+    // Appliquer le tri
+    if (sortOption === "alphabetical") {
+      setSortedContent(contentToDisplay.sort((a, b) => a.title.localeCompare(b.title)));
+    } else if (sortOption === "alphabetical-reverse") {
+      setSortedContent(contentToDisplay.sort((a, b) => b.title.localeCompare(a.title)));
+    } else if (sortOption === "date-recent") {
+      setSortedContent(contentToDisplay.sort((a, b) => b.year - a.year));
+    } else if (sortOption === "date-old") {
+      setSortedContent(contentToDisplay.sort((a, b) => a.year - b.year));
+    } else {
+      setSortedContent(contentToDisplay);
     }
-  }, [sortOption, cardType, data?.getAll]);
+  }, [sortOption, cardType]);
 
   // Filtrer le contenu lorsque la recherche change
   useEffect(() => {
@@ -86,9 +64,6 @@ function ContentList({
     }
   }, [searchQuery, sortedContent]);
 
-  if (loading) return <p>Loading in progress...</p>;
-  if (error) return <p>There might be an issue</p>;
-  
   return (
     <div className={styles.contentList}>
       {filteredContent.length === 0 ? (
