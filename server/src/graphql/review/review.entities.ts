@@ -5,6 +5,7 @@ import {
   PrimaryGeneratedColumn,
   BaseEntity,
   ManyToOne,
+  JoinColumn,
 } from "typeorm";
 import { User } from "../user/user.entities";
 import { Movie } from "../movie/movie.entities";
@@ -31,23 +32,44 @@ export class Review extends BaseEntity {
   @Field()
   date: Date;
 
+  @Column()
+  userId: number;
+
+  @Column()
+  movieId: number;
+
+  @Column()
+  bookId: number;
+
+  @Column()
+  gameId: number;
+
+  @Column()
+  albumId: number;
+
+  // Relations
   @Field(() => User)
   @ManyToOne(() => User, (user) => user.reviews)
+  @JoinColumn({ name: "userId" })
   user: User;
 
   @Field(() => Movie)
   @ManyToOne(() => Movie, (movie) => movie.reviews)
+  @JoinColumn({ name: "movieId" })
   movie: Movie;
 
   @Field(() => Book)
   @ManyToOne(() => Book, (book) => book.reviews)
+  @JoinColumn({ name: "bookId" })
   book: Book;
 
   @Field(() => Game)
   @ManyToOne(() => Game, (game) => game.reviews)
+  @JoinColumn({ name: "gameId" })
   game: Game;
 
   @Field(() => Album)
   @ManyToOne(() => Album, (album) => album.reviews)
+  @JoinColumn({ name: "albumId" })
   album: Album;
 }
