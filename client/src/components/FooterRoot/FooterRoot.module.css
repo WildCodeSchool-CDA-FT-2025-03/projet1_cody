@@ -8,6 +8,11 @@
   text-align: center;
   background-color: var(--color-navbar-bg);
 }
+@media (min-width: 768px) {
+  .FooterRoot {
+    padding: 0;
+  }
+}
 
 .footerContent {
   display: flex;
@@ -106,7 +111,9 @@
 @media (min-width: 768px) {
   .footerCredits {
     flex-direction: row;
+    justify-content: flex-end;
     gap: 2rem;
+    padding-right: 10rem;
   }
 }
 @media (min-width: 1024px) {
