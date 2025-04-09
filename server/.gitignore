@@ -3,3 +3,5 @@ coverage
 .env
 uploads/*.*
 !uploads/.gitkeep
+
+db.sqlite
