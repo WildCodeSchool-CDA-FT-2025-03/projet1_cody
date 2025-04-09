@@ -6,7 +6,6 @@ import {
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import DetailRoot from "../../components/DetailRoot/DetailRoot";
-import SpecificField from "../../components/SpecificField/SpecificField";
 
 const GET_ALL_GAME = gql`
   query GetOneGameById($id: String!) {
@@ -44,23 +43,21 @@ type getOneGame = {
   };
 };
 
-
 const specificField = ["publishers", "developers"];
 function GameDetailPage() {
   const { id } = useParams();
-
   const { loading, error, data } = useQuery<getOneGame>(GET_ALL_GAME, {
     variables: { id: id },
   });
+  const myawards : string[] = [];
+  const mycategory : string[] = [];
 
   if (loading) return <p>Loading in progress...</p>;
   if (error) return <p>There might be an issue</p>;
 
-  const myawards : string[] = [];
   data?.getOneGameById.game_awards.forEach((a,index) => {
     myawards[index] = a.name;
   });
-  const mycategory : string[] = [];
   data?.getOneGameById.game_categories.forEach((c,index) => {
     mycategory[index] = c.name;
   });
@@ -81,8 +78,8 @@ function GameDetailPage() {
         duration={data?.getOneGameById.duration_min || 0} 
         summary={data?.getOneGameById.summary || ""} 
         awards={myawards} 
-        category={mycategory} />
-      <SpecificField data={getField(data, specificField)} />
+        category={mycategory}
+        dataspecific={getField(data, specificField)}/>
     </main>
   );
 }
