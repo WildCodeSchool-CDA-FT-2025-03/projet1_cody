@@ -26,12 +26,12 @@ const routerClient: RouterClientType[] = [
   /* {routerClient[2].path} */
   {
     path: "/movie",
-    element: <ContentPage contentType={ "movies" as ContentType } title="Films" />,
+    element: <ContentPage contentType={ ContentType.Movies } title="Films" />,
   },
   /* {routerClient[3].path} */
   {
     path: "/music",
-    element: <ContentPage contentType={ "music" as ContentType } title="Musiques" />,
+    element: <ContentPage contentType={ ContentType.Music } title="Musiques" />,
   },
   /* {routerClient[4].path} */
   {
@@ -41,7 +41,7 @@ const routerClient: RouterClientType[] = [
   /* {routerClient[5].path} */
   {
     path: "/book",
-    element: <ContentPage contentType={ "books" as ContentType } title="Livres" />,
+    element: <ContentPage contentType={ ContentType.Books } title="Livres" />,
   },
   {
     path: "/details/game/:id",
