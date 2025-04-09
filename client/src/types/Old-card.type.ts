@@ -1,9 +1,8 @@
 type CardDataType = {
   id?: number;
   title: string;
-  image: string;
-  alt: string;
-  year: number;
+  image_url: string;
+  image_alt: string;
 };
 
 export default CardDataType;
