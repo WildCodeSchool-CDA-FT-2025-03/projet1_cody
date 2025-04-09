@@ -14,79 +14,79 @@
   }
 }
 
-.detailpicture {
+.detailPicture {
   width: 100%;
   background-color: red;
   grid-column: 1 / 2;
   grid-row: 1 / 3;
 }
 @media (min-width: 1024px) {
-  .detailpicture {
+  .detailPicture {
     grid-column: 1 / 2;
     grid-row: 1 / 6;
   }
 }
 
-.detailtitle {
+.detailTitle {
   width: 100%;
   background-color: green;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
 }
 @media (min-width: 1024px) {
-  .detailtitle {
+  .detailTitle {
     grid-column: 2 / 2;
     grid-row: 1 / 2;
   }
 }
 
-.detailaward {
+.detailAward {
   width: 100%;
   background-color: blue;
   grid-column: 1 / 3;
   grid-row: 4 / 5;
 }
 @media (min-width: 1024px) {
-  .detailaward {
+  .detailAward {
     grid-column: 2 / 2;
     grid-row: 2 / 2;
   }
 }
 
-.detailsummary {
+.detailSummary {
   width: 100%;
   background-color: yellow;
   grid-column: 1 / 3;
   grid-row: 3 / 4;
 }
 @media (min-width: 1024px) {
-  .detailsummary {
+  .detailSummary {
     grid-column: 2 / 2;
     grid-row: 3 / 4;
   }
 }
 
-.detailcategorie {
+.detailCategorie {
   width: 100%;
   background-color: purple;
   grid-column: 1 / 3;
   grid-row: 6 / 7;
 }
 @media (min-width: 1024px) {
-  .detailcategorie {
+  .detailCategorie {
     grid-column: 2 / 2;
     grid-row: 4 / 5;
   }
 }
 
-.detailcollection {
+.detailCollection {
   width: 100%;
   background-color: orange;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
 @media (min-width: 1024px) {
-  .detailcollection {
+  .detailCollection {
     grid-column: 2 / 2;
     grid-row: 5 / 6;
   }

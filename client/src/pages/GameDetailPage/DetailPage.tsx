@@ -79,7 +79,7 @@ function GameDetailPage() {
         summary={data?.getOneGameById.summary || ""} 
         awards={myawards} 
         category={mycategory}
-        dataspecific={getField(data, specificField)}/>
+        dataSpecific={getField(data, specificField)}/>
     </main>
   );
 }

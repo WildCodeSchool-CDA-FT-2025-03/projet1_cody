@@ -1,30 +1,30 @@
 import SpecificField from "../SpecificField/SpecificField";
 import style from "./DetailRoot.module.css";
 
-function DetailRoot({title, year, duration, summary, awards, category, dataspecific}: { title: string; year: number; duration: number; summary: string; awards: string[]; category: string[]; dataspecific: Record<string, string> }) {
+function DetailRoot({title, year, duration, summary, awards, category, dataSpecific}: { title: string; year: number; duration: number; summary: string; awards: string[]; category: string[]; dataSpecific: Record<string, string> }) {
   return (
     <section className={style.container}>
-      <image className={style.detailpicture}>Photo</image>
-      <div className={style.detailtitle}>
+      <image className={style.detailPicture}>Photo</image>
+      <div className={style.detailTitle}>
         <h1>{title}</h1>
-        <span className={style.detailyear}>{year} {duration}</span>
+        <span className={style.detailYear}>{year} {duration}</span>
       </div>
-      <ul className={style.detailaward}>
+      <ul className={style.detailAward}>
         {awards.map((item, index) => (
-          <li key={index} className={style.detailawarditem}>
+          <li key={index} className={style.detailAwardItem}>
             {item}
           </li>
         ))}
       </ul>
-      <p className={style.detailsummary}>{summary}</p>
-      <ul className={style.detailcategorie}>
+      <p className={style.detailSummary}>{summary}</p>
+      <ul className={style.detailCategorie}>
         {category.map((item, index) => (
-          <li key={index} className={style.detailcategorieitem}>
+          <li key={index} className={style.detailCategorieitem}>
             {item}
           </li>
         ))}
       </ul>
-      <SpecificField data={dataspecific} />
+      <SpecificField data={dataSpecific} />
     </section>
   );
 }
