@@ -5,7 +5,7 @@ import CardDataType from "../../types/Old-card.type";
 
 // Définition du type des props
 type CarrouselRootProps = {
-  cards: CardDataType[]; // Données des cartes à afficher
+  cards: CardDataType[] | undefined; // Données des cartes à afficher
   h2: string; // Titre du carrousel
 };
 
@@ -65,7 +65,7 @@ function CarrouselRoot({ cards, h2 }: CarrouselRootProps) {
       )}
       <div className={style.CarrouselRoot} ref={scrollRef}>
         <div className={style.CarrouselWrapper}>
-          {cards.map((card) => (
+          {cards?.map((card) => (
             <CardRoot key={card.id} {...card} />
           ))}
         </div>
