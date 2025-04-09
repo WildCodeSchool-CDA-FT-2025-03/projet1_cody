@@ -11,6 +11,7 @@ import {
 import { Track } from "./track.entities";
 import { Artist } from "./artist.entities";
 import { AlbumCategory } from "./album_category.entities";
+import { Review } from "../review/review.entities";
 
 @ObjectType()
 @Entity()
@@ -106,4 +107,8 @@ export class Album extends BaseEntity {
   @Field(() => [AlbumCategory])
   @ManyToMany(() => AlbumCategory, (album_category) => album_category.albums)
   album_categories: AlbumCategory[];
+
+  @Field(() => [Review])
+  @OneToMany(() => Review, (review) => review.album)
+  reviews: Review[];
 }

@@ -1,5 +1,12 @@
 import { Field, ObjectType } from "type-graphql";
-import { Column, Entity, PrimaryGeneratedColumn, BaseEntity } from "typeorm";
+import {
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  BaseEntity,
+  OneToMany,
+} from "typeorm";
+import { Review } from "../review/review.entities";
 
 @ObjectType()
 @Entity()
@@ -19,4 +26,8 @@ export class User extends BaseEntity {
   @Column()
   @Field()
   isAdmin: boolean;
+
+  @Field(() => [Review])
+  @OneToMany(() => Review, (review) => review.user)
+  reviews: Review[];
 }

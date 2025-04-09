@@ -5,10 +5,12 @@ import {
   PrimaryGeneratedColumn,
   BaseEntity,
   ManyToMany,
+  OneToMany,
 } from "typeorm";
 import { MovieCategory } from "./movie_category.entities";
 import { MovieAward } from "./movie_award.entities";
 import { MovieActors } from "./movie_actors.entities";
+import { Review } from "../review/review.entities";
 
 @ObjectType()
 @Entity()
@@ -103,4 +105,8 @@ export class Movie extends BaseEntity {
   @Field(() => [MovieActors])
   @ManyToMany(() => MovieActors, (movie_actors) => movie_actors.movies)
   movie_actors: MovieActors[];
+
+  @Field(() => [Review])
+  @OneToMany(() => Review, (review) => review.movie)
+  reviews: Review[];
 }

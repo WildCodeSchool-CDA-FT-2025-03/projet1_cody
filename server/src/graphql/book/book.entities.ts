@@ -1,5 +1,12 @@
 import { Field, ObjectType } from "type-graphql";
-import { Column, Entity, PrimaryGeneratedColumn, BaseEntity } from "typeorm";
+import {
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  BaseEntity,
+  OneToMany,
+} from "typeorm";
+import { Review } from "../review/review.entities";
 
 @ObjectType()
 @Entity()
@@ -55,4 +62,8 @@ export class Book extends BaseEntity {
   @Column()
   @Field()
   extract: string;
+
+  @Field(() => [Review])
+  @OneToMany(() => Review, (review) => review.book)
+  reviews: Review[];
 }
