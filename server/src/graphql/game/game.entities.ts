@@ -111,7 +111,11 @@ export class Game extends BaseEntity {
 
   @Column()
   @Field()
-  url: string;
+  image_url: string;
+
+  @Column()
+  @Field()
+  image_alt: string;
 
   @Field(() => [DlcExpansion])
   @ManyToMany(() => DlcExpansion, (dlc_expansions) => dlc_expansions.games)

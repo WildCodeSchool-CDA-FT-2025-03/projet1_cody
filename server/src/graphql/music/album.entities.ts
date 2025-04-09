@@ -97,7 +97,11 @@ export class Album extends BaseEntity {
 
   @Column()
   @Field()
-  url: string;
+  image_url: string;
+
+  @Column()
+  @Field()
+  image_alt: string;
 
   @Field(() => [Track])
   @OneToMany(() => Track, (track) => track.album)
