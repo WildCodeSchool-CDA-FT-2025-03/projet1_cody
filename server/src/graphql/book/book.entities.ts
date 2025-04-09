@@ -58,5 +58,9 @@ export class Book extends BaseEntity {
 
   @Column()
   @Field()
-  url: string;
+  image_url: string;
+
+  @Column()
+  @Field()
+  image_alt: string;
 }
