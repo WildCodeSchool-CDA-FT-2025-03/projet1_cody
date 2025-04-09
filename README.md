@@ -71,10 +71,10 @@ Pour installer et exécuter ce projet localement, suivez ces étapes :
 
 5. Lance l'application au niveau racine
 
-```bash
-cd ..
-npm run dev
-```
+   ```bash
+   cd ..
+   npm run dev
+   ```
 
 ## 🤝 Equipe de développement
 
