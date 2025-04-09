@@ -89,6 +89,10 @@ export class Movie extends BaseEntity {
   @Field()
   box_office: number;
 
+  @Column()
+  @Field()
+  url: string;
+
   @Field(() => [MovieCategory])
   @ManyToMany(
     () => MovieCategory,

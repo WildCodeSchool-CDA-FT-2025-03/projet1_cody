@@ -93,7 +93,7 @@ import { MovieJSON } from "../../graphql/movie/movie.types";
         newMovie.series = oneMovie.series;
         newMovie.budget = oneMovie.budget || 0;
         newMovie.box_office = oneMovie.box_office || 0;
-
+        newMovie.url = "";
         // Préparation des relations
         const movieAwards = oneMovie.awards
           .map((a) => {

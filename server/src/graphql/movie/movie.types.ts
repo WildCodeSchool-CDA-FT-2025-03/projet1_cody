@@ -19,6 +19,7 @@ type MovieJSON = {
   box_office: number;
   awards: string[];
   actors: string[];
+  url: string;
 };
 
 export { MovieJSON };

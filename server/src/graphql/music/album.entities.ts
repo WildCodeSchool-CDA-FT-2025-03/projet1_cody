@@ -95,6 +95,10 @@ export class Album extends BaseEntity {
   @Field()
   awards: string;
 
+  @Column()
+  @Field()
+  url: string;
+
   @Field(() => [Track])
   @OneToMany(() => Track, (track) => track.album)
   tracklist: Track[];

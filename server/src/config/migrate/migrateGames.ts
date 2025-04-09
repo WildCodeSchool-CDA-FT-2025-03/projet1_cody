@@ -102,6 +102,7 @@ import { default as games } from "./games.json";
         newGame.gameplay_mechanics = onegame.gameplay_mechanics.toString();
         newGame.available_on = onegame.available_on.toString();
         newGame.mod_support = onegame.mod_support.toString();
+        newGame.url = "";
 
         newGame.dlc_expansions = onegame.dlc_expansions.map((d) => {
           return resultdlc.find((dlc) => dlc.name === d);

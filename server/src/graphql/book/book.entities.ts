@@ -55,4 +55,8 @@ export class Book extends BaseEntity {
   @Column()
   @Field()
   extract: string;
+
+  @Column()
+  @Field()
+  url: string;
 }
