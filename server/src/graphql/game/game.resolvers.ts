@@ -8,6 +8,10 @@ export default class GameResolvers {
     if (!isNaN(parseInt(id))) {
       return await Game.findOne({
         where: { id: parseInt(id) },
+        relations: {
+          game_awards: true,
+          game_categories: true,
+        },
       });
     }
     return null;
