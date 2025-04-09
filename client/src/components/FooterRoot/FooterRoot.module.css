@@ -1,4 +1,5 @@
 .FooterRoot {
+  padding: 0 0 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +9,7 @@
 }
 
 .logoLink {
+  padding: 1rem 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,6 +23,7 @@
 }
 
 .NewsletterContainer {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,12 +31,27 @@
   padding: 0 0 1rem;
   color: var(--color-black);
 }
+@media (min-width: 768px) {
+  .NewsletterContainer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0 1rem;
+  }
+}
 
 .newsletterForm {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+@media (min-width: 768px) {
+  .newsletterForm {
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0 2rem;
+  }
 }
 
 .visuallyHidden {
@@ -67,7 +85,7 @@
 }
 
 .newsletterButton:hover {
-  border: 1px solid var(--color-black);
+  border: 2px solid var(--color-black);
   transform: scale(1.05);
   background-color: var(--color-yellow);
   color: var(--color-black);

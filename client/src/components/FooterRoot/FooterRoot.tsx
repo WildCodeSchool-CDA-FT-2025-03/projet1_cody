@@ -22,7 +22,7 @@ function FooterRoot() {
         <img className={style.logoIconNav} src={logo} alt="Logo Hive" />
         <img className={style.logoTextNav} src={logoText} alt="Logo Hive texte" />
       </Link>
-      <span>Home media centre communautaire</span>
+      <span>Home media center communautaire</span>
       <span>
         Enregistrez votre collection et partagez vos critiques de films, musiques, jeux vidéos et
         livres
