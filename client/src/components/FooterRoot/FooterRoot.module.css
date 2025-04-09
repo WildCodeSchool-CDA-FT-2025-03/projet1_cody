@@ -39,7 +39,8 @@
 }
 @media (min-width: 768px) {
   .footerContentLogo {
-    width: 33%;
+    width: 280px;
+    padding: 0 0 0 10rem;
   }
 }
 
