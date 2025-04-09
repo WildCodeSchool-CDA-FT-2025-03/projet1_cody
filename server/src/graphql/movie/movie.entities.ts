@@ -1,5 +1,14 @@
 import { Field, ObjectType } from "type-graphql";
-import { Column, Entity, PrimaryGeneratedColumn, BaseEntity } from "typeorm";
+import {
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  BaseEntity,
+  ManyToMany,
+} from "typeorm";
+import { MovieCategory } from "./movie_category.entities";
+import { MovieAward } from "./movie_award.entities";
+import { MovieActors } from "./movie_actors.entities";
 
 @ObjectType()
 @Entity()
@@ -15,6 +24,22 @@ export class Movie extends BaseEntity {
   @Column()
   @Field()
   subtitle: string;
+
+  @Column()
+  @Field()
+  directors: string;
+
+  @Column()
+  @Field()
+  writers: string;
+
+  @Column()
+  @Field()
+  producers: string;
+
+  @Column()
+  @Field()
+  studios: string;
 
   @Column()
   @Field()
@@ -42,6 +67,10 @@ export class Movie extends BaseEntity {
 
   @Column()
   @Field()
+  keywords: string;
+
+  @Column()
+  @Field()
   targeted_audience: string;
 
   @Column()
@@ -54,9 +83,24 @@ export class Movie extends BaseEntity {
 
   @Column()
   @Field()
-  budget: string;
+  budget: number;
 
   @Column()
   @Field()
-  box_office: string;
+  box_office: number;
+
+  @Field(() => [MovieCategory])
+  @ManyToMany(
+    () => MovieCategory,
+    (movie_categories) => movie_categories.movies
+  )
+  movie_categories: MovieCategory[];
+
+  @Field(() => [MovieAward])
+  @ManyToMany(() => MovieAward, (movie_awards) => movie_awards.movies)
+  movie_awards: MovieAward[];
+
+  @Field(() => [MovieActors])
+  @ManyToMany(() => MovieActors, (movie_actors) => movie_actors.movies)
+  movie_actors: MovieActors[];
 }
