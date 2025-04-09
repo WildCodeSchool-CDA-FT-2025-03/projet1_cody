@@ -1,10 +1,10 @@
-# 🏠 Hive - Home media center
+# 🧠 Hive - Home media center
 
 ![Hive Logo](./client/public/hive.jpg)
 
-## 📚 À propos du projet
+## 📜 À propos du projet
 
-**HIVE** est une application web qui vous permet d'enregistrer votre collection de média et de partagez vos critiques avec les autres utilisateurs.
+**HIVE** est une application web de home média center permettant de centraliser vos collection de média et de partagez vos critiques avec les autres utilisateurs.
 
 Vous pouvez gérer vos collections de :
 
@@ -13,28 +13,30 @@ Vous pouvez gérer vos collections de :
 - 📖 Livres
 - 🎵 Musique
 
-Vous pouvez également :
+## 🚀 Fonctionnalités
 
-- Partager une critique sur un média (1 critique max. par média)
-- S'abonner à la newsletter
-- Accéder à votre page "Mon compte" pour:
-  - gérer votre collection
-  - gérer vos favoris
-  - gérer vos critiques
+- 📚 Bibliothèque pour livres, films, jeux, musiques
+- 🤓 Recherche intelligente
+- 🔍 Système de filtre et de tri
+- ⭐ Système de favoris et notations
+- 🗒️ Rédiger des critiques
+- 📩 S'inscrire à la newsletter
 
 L'application est développée "mobile first". L'interface est donc responsive. La navigation dans le catalogue permet de filtrer et trier selon vos besoins.
 
-## 🤝 Equipe de développement
+## 📸 Démo / Screenshots
 
-Développé par [Alexandre Dumout](https://www.linkedin.com/in/alexandre-dumout-317505123/), [Romaric Yi](https://www.linkedin.com/in/yiromaric/) et [Ryan Decian](https://www.linkedin.com/in/ryan-decian-864696302/)
+![Aperçu de l'interface mobile](./public/screenshot-mobile.png)
+![Aperçu de l'interface desktop](./public/screenshot-desktop.png)
 
-## 🚀 Technologies utilisées
+## 🛠️ Technologies utilisées
 
-- ⚛️ **React** - Bibliothèque front-end pour la création d'interfaces utilisateur dynamiques
-- 🔷 **TypeScript** - Ajout du typage statique pour un code plus robuste
-- 🔄 **GraphQL** - Langage de requête pour API flexible et efficace
-- 🗃️ **SQLite** - Système de gestion de base de données léger
-- 🔌 **TypeORM** - ORM pour TypeScript et JavaScript
+- **React** - Bibliothèque front-end pour la création d'interfaces utilisateur dynamiques
+- **TypeScript** - Ajout du typage statique pour un code plus robuste
+- **GraphQL** - Langage de requête pour API flexible et efficace
+- **SQLite** - Système de gestion de base de données léger
+- **TypeORM** - ORM pour TypeScript et JavaScript
+- **APIs** : TMDb, Open Library, IGDB, Discogs
 
 ## 🛠️ Installation
 
@@ -61,32 +63,23 @@ Pour installer et exécuter ce projet localement, suivez ces étapes :
    ```
 
 4. Installez les dépendances du client
+
    ```bash
    cd ../client/
    npm install
    ```
 
-### Convention de commits
+5. Lance l'application au niveau racine
 
-Nous utilisons la convention de commits conventionnels :
+```bash
+cd ..
+npm run dev
+```
 
-- `feat: description` pour les nouvelles fonctionnalités
-- `fix: description` pour les corrections de bugs
-- `docs: description` pour les mises à jour de documentation
-- `style: description` pour les changements de style
-- `refactor: description` pour les refactorisations de code
+## 🤝 Equipe de développement
 
-## 📝 Justification des choix techniques
-
-### Front-end
-
-- **React avec TypeScript** : Permet un développement modulaire avec typage statique pour réduire les bugs.
-
-### Back-end
-
-- **GraphQL** : Offre une flexibilité dans les requêtes et réduit le sur-fetchin/sous-fetching de données.
-- **SQLite avec TypeORM** : Solution légère et simple à configurer pour le stockage des données, avec une abstraction ORM puissante.
+Développé par [Alexandre Dumout](https://www.linkedin.com/in/alexandre-dumout-317505123/), [Romaric Yi](https://www.linkedin.com/in/yiromaric/) et [Ryan Decian](https://www.linkedin.com/in/ryan-decian-864696302/)
 
 ---
 
-Ce projet est développé dans le cadre de la Formation "Développeur Concepteur d'Applications" de la Wild Code School
+Ce projet est développé dans le cadre de la Formation "Développeur Concepteur d'Applications" de la [Wild Code School](https://www.wildcodeschool.com/)
