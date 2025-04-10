@@ -1,11 +1,13 @@
 import { ReactNode } from "react";
-
 // Import des Pages
+import ContentPage from "../pages/ContentPage/ContentPage";
+import GameDetailPage from "../pages/GameDetailPage/DetailPage";
 import HomePage from "../pages/HomePage/HomePage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
-import ContentPage from "../pages/ContentPage/ContentPage";
+import ProfilePage from "../pages/ProfilePage/ProfilePage";
+import AddMediaPage from "../pages/AddMediaPage/AddMediaPage";
+// Import des types
 import { ContentType } from "../types/ContentType";
-import GameDetailPage from "../pages/GameDetailPage/DetailPage";
 
 interface RouterClientType {
   path: string;
@@ -19,7 +21,9 @@ export const ROUTES = {
   MUSIC: "/music",
   GAMES: "/game",
   BOOKS: "/book",
-  GAME_DETAILS: "/details/game/:id",
+  GAME_DETAILS: "/game/:id",
+  PROFILE: "/profile",
+  ADD_MEDIA: "/add-media",
   NOT_FOUND: "/not-found",
 };
 
@@ -27,6 +31,14 @@ const routerClient: RouterClientType[] = [
   {
     path: ROUTES.HOME,
     element: <HomePage />,
+  },
+  {
+    path: ROUTES.PROFILE,
+    element: <ProfilePage />,
+  },
+  {
+    path: ROUTES.ADD_MEDIA,
+    element: <AddMediaPage />,
   },
   {
     path: ROUTES.MOVIES,

@@ -7,7 +7,7 @@ import musicIcon from "../../assets/icons/music.svg";
 import userIcon from "../../assets/icons/user.svg";
 
 const navItems = [
-  { icon: userIcon, text: "Mon compte", path: ROUTES.HOME },
+  { icon: userIcon, text: "Mon compte", path: ROUTES.PROFILE },
   { icon: movieIcon, text: "Films", path: ROUTES.MOVIES },
   { icon: musicIcon, text: "Musique", path: ROUTES.MUSIC },
   { icon: gameIcon, text: "Jeux", path: ROUTES.GAMES },
