@@ -26,8 +26,9 @@ L'application est développée "mobile first". L'interface est donc responsive. 
 
 ## 📸 Démo / Screenshots
 
-![Aperçu de l'interface mobile](./client/public/screenshot-mobile.png)
-![Aperçu de l'interface desktop](./client/public/screenshot-desktop.png)
+> ![Aperçu de l'interface mobile](./client/public/screenshot-mobile.webp) >_Aperçu de l'interface mobile_
+>
+> ![Aperçu de l'interface desktop](./client/public/screenshot-desktop.webp) >_Aperçu de l'interface desktop_
 
 ## 🛠️ Technologies utilisées
 
