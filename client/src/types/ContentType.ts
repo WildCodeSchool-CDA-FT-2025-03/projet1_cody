@@ -5,6 +5,7 @@ export enum ContentType {
   Games = "games",
   Books = "books",
   Music = "music",
+  Profile = "profile",
 }
 
 export type ContentByType = {
