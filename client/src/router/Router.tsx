@@ -12,40 +12,45 @@ interface RouterClientType {
   element: ReactNode;
 }
 
+// Routes constantes pour utilisation dans d'autres composants
+export const ROUTES = {
+  HOME: "/",
+  MOVIES: "/movie",
+  MUSIC: "/music",
+  GAMES: "/game",
+  BOOKS: "/book",
+  GAME_DETAILS: "/details/game/:id",
+  NOT_FOUND: "/not-found",
+};
+
 const routerClient: RouterClientType[] = [
-  /* {routerClient[0].path} */
   {
-    path: "/",
+    path: ROUTES.HOME,
     element: <HomePage />,
   },
-  /* {routerClient[1].path} */
   {
-    path: "/not-found",
-    element: <NotFoundPage />,
-  },
-  /* {routerClient[2].path} */
-  {
-    path: "/movie",
-    element: <ContentPage contentType={ ContentType.Movies } title="Films" />,
-  },
-  /* {routerClient[3].path} */
-  {
-    path: "/music",
-    element: <ContentPage contentType={ ContentType.Music } title="Musiques" />,
-  },
-  /* {routerClient[4].path} */
-  {
-    path: "/game",
-    element: <ContentPage contentType={ ContentType.Games } title="Jeux" />,
-  },
-  /* {routerClient[5].path} */
-  {
-    path: "/book",
-    element: <ContentPage contentType={ ContentType.Books } title="Livres" />,
+    path: ROUTES.MOVIES,
+    element: <ContentPage contentType={ContentType.Movies} title="Films" />,
   },
   {
-    path: "/details/game/:id",
+    path: ROUTES.MUSIC,
+    element: <ContentPage contentType={ContentType.Music} title="Musiques" />,
+  },
+  {
+    path: ROUTES.GAMES,
+    element: <ContentPage contentType={ContentType.Games} title="Jeux" />,
+  },
+  {
+    path: ROUTES.BOOKS,
+    element: <ContentPage contentType={ContentType.Books} title="Livres" />,
+  },
+  {
+    path: ROUTES.GAME_DETAILS,
     element: <GameDetailPage />,
+  },
+  {
+    path: ROUTES.NOT_FOUND,
+    element: <NotFoundPage />,
   },
 ];
 

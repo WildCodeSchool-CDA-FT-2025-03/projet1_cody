@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import routerClient from "../../router/Router";
+import navItems from "../NavRoot/navItems";
 
 import Newsletter from "../../components/Newsletter/Newsletter";
 
@@ -7,14 +7,6 @@ import logo from "../../assets/icons/logo-hive.svg";
 import logoText from "../../assets/icons/logo-hive-text.svg";
 
 import style from "./FooterRoot.module.css";
-
-const navItems = [
-  { text: "Accueil", path: "/" },
-  { text: "Films", path: routerClient[2].path },
-  { text: "Musiques", path: routerClient[3].path },
-  { text: "Jeux", path: routerClient[4].path },
-  { text: "Livres", path: routerClient[5].path },
-];
 
 const creditsItems = [
   { name: "Alexandre Dumout", path: "https://www.linkedin.com/in/alexandre-dumout-317505123/" },
