@@ -1,12 +1,14 @@
 import style from "./DetailRoot.module.css";
 
-function DetailRoot({title, year, duration, summary, awards, category}: { title: string; year: number; duration: number; summary: string; awards: string[]; category: string[] }) {
+function DetailRoot({image_url, image_alt, title, year, duration, summary, awards, category, pegi_esbr_rating}: { image_url: string, image_alt: string, title: string; year: number; duration: number; summary: string; awards: string[]; category: string[], pegi_esbr_rating: string }) {
   return (
     <section className={style.containerComponent}>
-      <image className={style.detailPicture}>Photo</image>
+      <figure className={style.detailPicture}>
+        <img src={image_url} alt={image_alt} />
+      </figure>
       <div className={style.detailTitle}>
         <h1>{title}</h1>
-        <span className={style.detailYear}>{year} {duration}</span>
+        <span className={style.detailYear}>Année : {year} - duration : {duration} - Public : {pegi_esbr_rating}</span>
       </div>
       <ul className={style.detailAward}>
         {awards.map((item, index) => (

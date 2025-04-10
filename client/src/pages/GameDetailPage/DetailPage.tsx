@@ -7,6 +7,9 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import DetailRoot from "../../components/DetailRoot/DetailRoot";
 import SpecificField from "../../components/SpecificField/SpecificField";
+import CardDataType from "../../types/Old-card.type";
+import CarrouselRoot from "../../components/ComponentsRoot/CarrouselRoot";
+
 
 const GET_ALL_GAME = gql`
   query GetOneGameById($id: String!) {
@@ -16,6 +19,8 @@ const GET_ALL_GAME = gql`
     summary
     developers
     publishers
+    image_url
+    image_alt
     game_awards {
       name
     }
@@ -24,16 +29,25 @@ const GET_ALL_GAME = gql`
     }
     pegi_esbr_rating
   }
+  getLastGames {
+    id
+    image_alt
+    image_url
+    title
+  }
 }
 `;
 
 type getOneGame = {
+  getLastGames: CardDataType[];
   getOneGameById: {
     title: string;
     duration_min: number;
     summary: string;
     developers: string;
     publishers: string;
+    image_url: string;
+    image_alt: string;
     game_awards: {
       name: string;
     }[];
@@ -75,6 +89,9 @@ function GameDetailPage() {
     <main className={CSSTargetPage.Main}>
       <div className={CSSTargetPage.container}>
         <DetailRoot 
+          image_url={data?.getOneGameById.image_url || ""} 
+          image_alt={data?.getOneGameById.image_alt || ""} 
+          pegi_esbr_rating={data?.getOneGameById.pegi_esbr_rating || ""} 
           title={data?.getOneGameById.title || ""} 
           year={0} 
           duration={data?.getOneGameById.duration_min || 0} 
@@ -83,6 +100,7 @@ function GameDetailPage() {
           category={mycategory}/>
         <SpecificField data={getField(data, specificField)} />
       </div>
+      <CarrouselRoot cards={data?.getLastGames} h2="jeux"/>
     </main>
   );
 }
