@@ -17,8 +17,8 @@ function ContentList({
   sortOption = "alphabetical",
   searchQuery = "",
 }: ContentListProps) {
-  const [sortedContent, setSortedContent] = useState<CardDataType[]>([]);
-  const [filteredContent, setFilteredContent] = useState<CardDataType[]>([]);
+  const [[sortedContent, ascsortedContent], setSortedContent] = useState<[string, string]>(["id", "DESC"]);
+  const [filteredContent, setFilteredContent] = useState<string>("");
 
   // Convertir le contentType en type interne
   const getCardType = (): keyof ContentByType => {
@@ -34,8 +34,8 @@ function ContentList({
   const cardType = getCardType();
 
   const GET_ALL_RESSOURCE = gql`
-    query GetAll($name: String!) {
-      getAll(name: $name) {
+    query GetAll($search: String!, $asc: String!, $sort: String!, $name: String!) {
+      getAll(search: $search, asc: $asc, sort: $sort, name: $name) {
         id
         image_url
         image_alt
@@ -49,37 +49,24 @@ function ContentList({
   };
 
   const { loading, error, data } = useQuery<getAllRessource>(GET_ALL_RESSOURCE, {
-    variables: { name: cardType },
+    variables: { name: cardType, sort: sortedContent, asc: ascsortedContent, search: filteredContent },
   });
 
   // Appliquer le tri lorsque les options de tri ou le contenu changent
   useEffect(() => {
-    if(data?.getAll !== undefined)
-    {
-      const contentToDisplay = [...(data?.getAll ?? [])];
-      
-      // Appliquer le tri
-      if (sortOption === "alphabetical") {
-        setSortedContent(contentToDisplay?.sort((a, b) => a.title.localeCompare(b.title)));
-      } else if (sortOption === "alphabetical-reverse") {
-        setSortedContent(contentToDisplay?.sort((a, b) => b.title.localeCompare(a.title)));
-      } else {
-        setSortedContent(contentToDisplay);
-      }
+    // Appliquer le tri
+    if (sortOption === "alphabetical") {
+      setSortedContent(["title","ASC"]);
+    } else if (sortOption === "alphabetical-reverse") {
+      setSortedContent(["title","DESC"]);
+    } else {
+      setSortedContent(["id","DESC"]);
     }
-  }, [sortOption, cardType, data?.getAll]);
+  }, [sortOption, cardType]);
 
   // Filtrer le contenu lorsque la recherche change
   useEffect(() => {
-    if (searchQuery.trim() === "") {
-      setFilteredContent(sortedContent);
-    } else {
-      const lowercaseQuery = searchQuery.toLowerCase();
-      const filtered = sortedContent.filter((item) =>
-        item.title.toLowerCase().includes(lowercaseQuery)
-      );
-      setFilteredContent(filtered);
-    }
+    setFilteredContent(searchQuery.trim());
   }, [searchQuery, sortedContent]);
 
   if (loading) return <p>Loading in progress...</p>;
@@ -87,10 +74,10 @@ function ContentList({
   
   return (
     <div className={styles.contentList}>
-      {filteredContent.length === 0 ? (
+      {data?.getAll.length === 0 ? (
         <p className={styles.noResults}>Aucun résultat trouvé pour votre recherche</p>
       ) : (
-        filteredContent.map((card) => <CardRoot key={card.id ?? card.title} {...card} />)
+        data?.getAll.map((card) => <CardRoot key={card.id ?? card.title} {...card} />)
       )}
     </div>
   );
