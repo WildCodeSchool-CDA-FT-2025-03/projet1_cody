@@ -1,88 +1,55 @@
 .addMediaPage {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  min-height: calc(100vh - 3rem);
+  margin-top: 4rem;
 }
-
-.mediaTypeButtons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 30px 0;
-}
-
-.mediaTypeButtons button {
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f5f5f5;
-  cursor: pointer;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-.mediaTypeButtons button:hover {
-  background-color: #e0e0e0;
-}
-
-.mediaTypeButtons button.active {
-  background-color: #3498db;
-  color: white;
-  border-color: #2980b9;
-}
-
-.formContainer {
-  margin-top: 30px;
-  animation: fadeIn 0.5s ease;
+@media (min-width: 1024px) {
+  .addMediaPage {
+    margin-top: 0;
+    padding: 0 5rem;
+  }
 }
 
 .mediaForm {
-  width: 100%;
-  background-color: #fff;
+  width: clamp(320px, 90%, 1024px);
   border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  padding: 2rem auto;
+  animation: fadeIn 0.5s ease;
 }
 
 .mediaForm h2 {
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
 .formGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.formField {
-  margin-bottom: 15px;
+  gap: 2rem;
 }
 
 .formField label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: 500;
-  color: #555;
+  margin-bottom: 0.5rem;
 }
 
 .formField input[type="text"],
 .formField input[type="number"],
 .formField input[type="date"],
 .formField textarea {
-  width: 100%;
+  width: 90%;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: none;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: var(--p-desc-size);
+  background-color: var(--color-input-bg);
+  color: var(--color-input-text);
 }
 
 .formField input[type="checkbox"] {
   margin-top: 5px;
-  width: 18px;
-  height: 18px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .formField textarea {
@@ -98,20 +65,19 @@
   display: block;
   width: 100%;
   max-width: 300px;
-  margin: 30px auto 0;
-  padding: 12px;
-  background-color: #2ecc71;
-  color: white;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  background-color: var(--color-yellow);
+  color: var(--color-black);
   border: none;
   border-radius: 4px;
-  font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--bold);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .submitButton:hover {
-  background-color: #27ae60;
+  background-color: var(--color-yellow);
 }
 
 @keyframes fadeIn {

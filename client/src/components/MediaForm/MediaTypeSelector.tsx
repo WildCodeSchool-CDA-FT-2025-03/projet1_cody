@@ -1,6 +1,6 @@
 import { MediaType } from "../../types/FormType";
 // Styles
-import styles from "../../pages/AddMediaPage/AddMediaPage.module.css";
+import styles from "./MediaTypeSelector.module.css";
 
 type MediaTypeSelectorProps = {
   selectedMedia: MediaType;
