@@ -53,10 +53,10 @@
 
 .filtersButtonSearch {
   width: 32px;
-    background: transparent;
-    border: none;
-    height: 32px;
-    cursor: pointer;
+  background: transparent;
+  border: none;
+  height: 32px;
+  cursor: pointer;
 }
 
 .filtersButtonSearch img {
