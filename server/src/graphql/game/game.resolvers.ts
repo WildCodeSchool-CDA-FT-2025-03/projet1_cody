@@ -21,4 +21,14 @@ export default class GameResolvers {
   async getGames(): Promise<Game[]> {
     return await Game.find();
   }
+
+  @Query(() => [Game])
+  async getLastGames(): Promise<Game[]> {
+    return await Game.find({
+      order: {
+        id: "DESC",
+      },
+      take: 15,
+    });
+  }
 }
