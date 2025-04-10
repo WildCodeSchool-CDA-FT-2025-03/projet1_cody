@@ -16,7 +16,7 @@ const creditsItems = [
 
 function FooterRoot() {
   return (
-    <footer className={style.FooterRoot}>
+    <footer className={style.footerRoot}>
       <Newsletter />
       <div className={style.footerContent}>
         <div className={style.footerContentLogo}>

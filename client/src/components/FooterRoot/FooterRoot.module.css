@@ -1,4 +1,4 @@
-.FooterRoot {
+.footerRoot {
   padding: 0 0 5rem;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   background-color: var(--color-navbar-bg);
 }
 @media (min-width: 768px) {
-  .FooterRoot {
+  .footerRoot {
     padding: 0;
   }
 }
