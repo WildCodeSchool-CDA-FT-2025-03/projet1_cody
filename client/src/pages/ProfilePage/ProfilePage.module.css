@@ -15,12 +15,12 @@
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  margin: 20px 0;
+  margin: 1.5rem 0;
 }
 
 .categorySelect {
-  padding: 8px 12px;
-  font-size: 16px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   border-radius: 4px;
   border: none;
   background-color: #45443a;
@@ -28,7 +28,7 @@
 }
 
 .addMediaButton {
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
   font-weight: var(--bold);

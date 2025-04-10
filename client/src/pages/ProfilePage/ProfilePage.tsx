@@ -21,16 +21,16 @@ const categoryOptions = [
   { value: ProfileCategory.Reviews, label: "Mes critiques" },
 ];
 
+// Ajouter l'option de gestion des critiques pour les administrateurs
+if (isAdmin) {
+  categoryOptions.push({ value: ProfileCategory.ManageReviews, label: "Gérer les critiques" });
+}
+
 function ProfilePage() {
   // État pour le sélecteur de catégorie
   const [category, setCategory] = useState<ProfileCategory>(ProfileCategory.Collection);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOption, setSortOption] = useState("alphabetical");
-
-  // Ajouter l'option de gestion des critiques pour les administrateurs
-  if (isAdmin) {
-    categoryOptions.push({ value: ProfileCategory.ManageReviews, label: "Gérer les critiques" });
-  }
 
   // Déterminer le type de contenu à afficher selon la catégorie sélectionnée
   const getContentType = () => {
@@ -40,7 +40,6 @@ function ProfilePage() {
   return (
     <section className={styles.profilePage}>
       <TitleAndBtnReturn title="Mon compte" />
-
       <div className={styles.categorySelector}>
         <select
           value={category}
@@ -53,7 +52,6 @@ function ProfilePage() {
             </option>
           ))}
         </select>
-
         {isAdmin && (
           <button className={styles.addMediaButton}>
             <Link className={styles.addMediaButtonLink} to={ROUTES.ADD_MEDIA}>
@@ -62,7 +60,6 @@ function ProfilePage() {
           </button>
         )}
       </div>
-
       <SearchAndFilters
         searchText="un contenu"
         searchValue={searchQuery}
@@ -70,7 +67,6 @@ function ProfilePage() {
         genreOptions={[]}
         onSortChange={setSortOption}
       />
-
       <ContentList
         contentType={getContentType()}
         sortOption={sortOption}
