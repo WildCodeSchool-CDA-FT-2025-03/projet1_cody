@@ -51,6 +51,22 @@
   height: 1rem;
 }
 
+.filtersButtonSearch {
+  width: 32px;
+    background: transparent;
+    border: none;
+    height: 32px;
+    cursor: pointer;
+}
+
+.filtersButtonSearch img {
+  position: absolute;
+  right: 6px;
+  width: 1rem;
+  height: 1rem;
+  top: 8px;
+}
+
 .filtersContainer {
   display: flex;
   flex-direction: row;

@@ -19,10 +19,10 @@ export default class GeneralResolvers {
     };
     const where: Record<string, unknown> = {};
 
-    if (!sort) {
+    if (sort) {
       sort = "id";
     }
-    if (!ascdesc) {
+    if (ascdesc !== "ASC" && ascdesc !== "DESC") {
       ascdesc = "ASC";
     }
     if (search) {

@@ -20,6 +20,47 @@ function SearchAndFilters({
 }: SearchAndFiltersProps) {
   const [newForm, setNewForm] = useState<initform>({search:"", genre: "", sortBy: ""});
 
+  const handleChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    setNewForm(() => ({
+      ...newForm,
+      search: event.target.value,
+    }));
+  };
+
+  const handleChangeSortBy = (event: ChangeEvent<HTMLSelectElement>) => {
+    let sort = "";
+    let asc ="";
+    
+    setNewForm(() => ({
+      ...newForm,
+      sortBy: event.target.value,
+    }));
+
+    switch(event.target.value) {
+    case "alphabetical":
+      sort = "title";
+      asc = "ASC";
+      break;
+    case "alphabetical-reverse":
+      sort = "title";
+      asc = "DESC";
+      break;
+    case "date-recent":
+      sort = "id";
+      asc = "DESC";
+      break;
+    case "date-old":
+      sort = "id";
+      asc = "ASC";
+      break;
+    }
+
+    refetch({
+      sort: sort, // Correctly fetches based on input value
+      asc: asc,
+    });
+  };
+
   return (
     <div className={styles.searchAndFilters}>
       <div className={styles.searchBarContainer}>
@@ -32,18 +73,12 @@ function SearchAndFilters({
           type="text"
           placeholder={`Rechercher ${contentType}`}
           value={newForm.search}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            setNewForm(() => ({
-              ...newForm,
-              search: event.target.value,
-            }));
-            refetch({
-              search: event.target.value, // Correctly fetches based on input value
-            });
-          }
-          }
+          onChange={handleChangeSearch}
         />
-        <img src={searchIcon} alt="Rechercher" className={styles.searchIcon} />
+        <button onClick={() => {
+          refetch(newForm);
+        }
+        } className={styles.filtersButtonSearch}><img src={searchIcon} alt="Rechercher" className={styles.searchIcon} /></button>
       </div>
       <div className={styles.filtersContainer}>
         <label htmlFor="genre" className={styles.visuallyHidden}>
@@ -60,40 +95,7 @@ function SearchAndFilters({
           name="sortBy"
           value={newForm.sortBy}
           id="sortBy"
-          onChange={(event: ChangeEvent<HTMLSelectElement>) => {
-            let sort = "";
-            let asc ="";
-            
-            setNewForm(() => ({
-              ...newForm,
-              sortBy: event.target.value,
-            }));
-
-            switch(event.target.value) {
-            case "alphabetical":
-              sort = "title";
-              asc = "ASC";
-              break;
-            case "alphabetical-reverse":
-              sort = "title";
-              asc = "DESC";
-              break;
-            case "date-recent":
-              sort = "id";
-              asc = "DESC";
-              break;
-            case "date-old":
-              sort = "id";
-              asc = "ASC";
-              break;
-            }
-
-            refetch({
-              sort: sort, // Correctly fetches based on input value
-              asc: asc,
-            });
-          }
-          }
+          onChange={handleChangeSortBy}
         >
           <option value="alphabetical">Ordre alphabétique</option>
           <option value="alphabetical-reverse">Ordre alphabétique inverse</option>
