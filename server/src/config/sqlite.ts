@@ -25,6 +25,9 @@ import { User } from "../graphql/user/user.entities";
 // Review
 import { ReviewMovie } from "../graphql/review/reviewMovie.entities";
 
+// Newsletter
+import { Newsletter } from "../graphql/newsletter/newsletter.entities";
+
 import "dotenv/config";
 
 const isDev = process.env.ENVIRONNEMENT === "development";
@@ -48,6 +51,7 @@ export const dataSource = new DataSource({
     AlbumCategory,
     User,
     ReviewMovie,
+    Newsletter,
   ], // On placera nos modèles de données ici
   synchronize: isDev, // Propriété de stratégie de synchronisation (ici, l'on synchronise à chaque fois que l'on lance le projet) ! Ne pas laisser en prod
   logging: isDev,
