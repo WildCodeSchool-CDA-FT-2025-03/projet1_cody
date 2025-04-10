@@ -7,4 +7,14 @@ export default class MovieResolvers {
   async getMovies(): Promise<Movie[]> {
     return await Movie.find();
   }
+
+  @Query(() => [Movie])
+  async getLastMovies(): Promise<Movie[]> {
+    return await Movie.find({
+      order: {
+        id: "DESC",
+      },
+      take: 15,
+    });
+  }
 }

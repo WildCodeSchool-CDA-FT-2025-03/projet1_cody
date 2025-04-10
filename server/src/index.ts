@@ -7,6 +7,7 @@ import "dotenv/config";
 
 import GameResolvers from "./graphql/game/game.resolvers";
 import BookResolvers from "./graphql/book/book.resolvers";
+import GeneralResolvers from "./graphql/general/general.resolvers";
 import MovieResolvers from "./graphql/movie/movie.resolvers";
 import MusicResolver from "./graphql/music/music.resolvers";
 import NewsletterResolvers from "./graphql/newsletter/newsletter.resolvers";
@@ -21,11 +22,12 @@ const PORT = parseInt(process.env.PORT_SERVER) || 3000;
     resolvers: [
       GameResolvers,
       BookResolvers,
+      GeneralResolvers,
       MovieResolvers,
       MusicResolver,
+      NewsletterResolvers,
       UserResolvers,
       ReviewResolvers,
-      NewsletterResolvers,
     ],
   });
   const server = new ApolloServer({
