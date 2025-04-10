@@ -93,8 +93,8 @@ import { MovieJSON } from "../../graphql/movie/movie.types";
         newMovie.series = oneMovie.series;
         newMovie.budget = oneMovie.budget || 0;
         newMovie.box_office = oneMovie.box_office || 0;
-        newMovie.image_url = "";
-        newMovie.image_alt = "";
+        newMovie.image_url = oneMovie.image_url || "";
+        newMovie.image_alt = oneMovie.image_alt || "";
 
         // Préparation des relations
         const movieAwards = oneMovie.awards
