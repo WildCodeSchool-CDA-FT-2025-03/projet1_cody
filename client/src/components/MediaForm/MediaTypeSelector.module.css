@@ -1,0 +1,27 @@
+.mediaTypeButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.mediaTypeButtons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-input-bg);
+  font-size: var(--p-desc-size);
+  color: var(--color-input-text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mediaTypeButtons button:hover {
+  background-color: #e0e0e0;
+  color: var(--color-black);
+}
+
+.mediaTypeButtons button.active {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+}

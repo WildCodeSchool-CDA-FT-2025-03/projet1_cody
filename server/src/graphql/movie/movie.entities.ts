@@ -21,83 +21,83 @@ export class Movie extends BaseEntity {
 
   @Column()
   @Field()
-  title: string;
+  title?: string;
 
   @Column()
   @Field()
-  subtitle: string;
+  subtitle?: string;
 
   @Column()
   @Field()
-  directors: string;
+  directors?: string;
 
   @Column()
   @Field()
-  writers: string;
+  writers?: string;
 
   @Column()
   @Field()
-  producers: string;
+  producers?: string;
 
   @Column()
   @Field()
-  studios: string;
+  studios?: string;
 
   @Column()
   @Field()
-  release_date: Date;
+  release_date?: Date;
 
   @Column()
   @Field()
-  isbn_ean_upc: string;
+  isbn_ean_upc?: string;
 
   @Column()
   @Field()
-  format: string;
+  format?: string;
 
   @Column()
   @Field()
-  duration: number;
+  duration?: number;
 
   @Column()
   @Field()
-  category: string;
+  category?: string;
 
   @Column()
   @Field()
-  summary: string;
+  summary?: string;
 
   @Column()
   @Field()
-  keywords: string;
+  keywords?: string;
 
   @Column()
   @Field()
-  targeted_audience: string;
+  targeted_audience?: string;
 
   @Column()
   @Field()
-  original_language: string;
+  original_language?: string;
 
   @Column()
   @Field()
-  series: boolean;
+  series?: boolean;
 
   @Column()
   @Field()
-  budget: number;
+  budget?: number;
 
   @Column()
   @Field()
-  box_office: number;
+  box_office?: number;
 
   @Column()
   @Field()
-  image_url: string;
+  image_url?: string;
 
   @Column()
   @Field()
-  image_alt: string;
+  image_alt?: string;
 
   @Field(() => [MovieCategory])
   @ManyToMany(

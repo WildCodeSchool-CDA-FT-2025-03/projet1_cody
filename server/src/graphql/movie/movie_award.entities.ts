@@ -18,7 +18,7 @@ export class MovieAward extends BaseEntity {
 
   @Column()
   @Field()
-  name: string;
+  name?: string;
 
   @Field(() => [Movie])
   @ManyToMany(() => Movie, (movies) => movies.movie_awards)

@@ -1,0 +1,70 @@
+.mediaForm {
+  width: clamp(320px, 90%, 1024px);
+  margin: 2rem auto;
+  padding: 2rem auto;
+  animation: fadeIn 0.5s ease;
+}
+
+.mediaForm h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.formField label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.formField input[type="text"],
+.formField input[type="number"],
+.formField input[type="date"],
+.formField textarea {
+  width: 90%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: var(--p-desc-size);
+  background-color: var(--color-input-bg);
+  color: var(--color-input-text);
+}
+
+.formField input[type="checkbox"] {
+  margin-top: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.formField textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.submitButton {
+  display: block;
+  width: 100%;
+  max-width: 18rem;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+  font-weight: var(--bold);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: var(--color-yellow);
+}
