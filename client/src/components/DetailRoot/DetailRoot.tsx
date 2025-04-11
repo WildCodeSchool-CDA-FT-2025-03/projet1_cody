@@ -10,7 +10,7 @@ function DetailRoot({image_url, image_alt, title, year, duration, summary, award
         <h1>{title}</h1>
         <span className={style.detailYear}>
           <span>Année : {year}</span>
-          <span>Durée : {duration}</span>
+          <span>Durée : {duration} h</span>
           <span>Public : {pegi_esbr_rating}</span>
         </span>
       </div>
