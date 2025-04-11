@@ -1,3 +1,6 @@
+// Components
+import RenderField from "./RenderField";
+// Types
 import { FormField, FormDataType } from "../../types/FormType";
 // Styles
 import styles from "./MediaForm.module.css";
@@ -19,58 +22,37 @@ const MediaForm: React.FC<MediaFormProps> = ({
   onSubmit,
   onChange,
 }) => {
-  // Rendu d'un champ de formulaire
-  const renderField = (field: FormField) => {
-    const { id, label, type, rows, maxLength } = field;
+  // Filtrer les champs non-textarea pour la grille
+  const nonTextareaCommonFields = commonFields.filter((field) => field.type !== "textarea");
+  const nonTextareaSpecificFields = specificFields.filter((field) => field.type !== "textarea");
 
-    return (
-      <div
-        key={id}
-        className={
-          type === "textarea" ? `${styles.formField} ${styles.fullWidth}` : styles.formField
-        }
-      >
-        <label htmlFor={id}>{label}</label>
-        {type === "textarea" ? (
-          <textarea
-            id={id}
-            name={id}
-            rows={rows || 4}
-            value={(formData[id] as string) || ""}
-            onChange={onChange}
-          />
-        ) : (
-          <input
-            type={type}
-            id={id}
-            name={id}
-            maxLength={maxLength}
-            checked={type === "checkbox" ? (formData[id] as boolean) || false : undefined}
-            value={type !== "checkbox" ? (formData[id] as string | number) || "" : undefined}
-            onChange={onChange}
-          />
-        )}
-      </div>
-    );
-  };
+  // Filtrer les champs textarea
+  const textareaCommonFields = commonFields.filter((field) => field.type === "textarea");
+  const textareaSpecificFields = specificFields.filter((field) => field.type === "textarea");
 
   return (
     <form className={styles.mediaForm} onSubmit={onSubmit}>
       <h2>{title}</h2>
       <div className={styles.formGrid}>
-        {/* Champs communs */}
-        {commonFields.map((field) => field.type !== "textarea" && renderField(field))}
+        {/* Champs communs non-textarea */}
+        {nonTextareaCommonFields.map((field) => (
+          <RenderField key={field.id} field={field} formData={formData} onChange={onChange} />
+        ))}
 
-        {/* Champs spécifiques */}
-        {specificFields.map((field) => field.type !== "textarea" && renderField(field))}
+        {/* Champs spécifiques non-textarea */}
+        {nonTextareaSpecificFields.map((field) => (
+          <RenderField key={field.id} field={field} formData={formData} onChange={onChange} />
+        ))}
       </div>
 
-      {/* Champs textarea (en bas du formulaire pour une meilleure mise en page) */}
-      {commonFields.filter((field) => field.type === "textarea").map((field) => renderField(field))}
+      {/* Champs textarea (en bas du formulaire) */}
+      {textareaCommonFields.map((field) => (
+        <RenderField key={field.id} field={field} formData={formData} onChange={onChange} />
+      ))}
 
-      {specificFields
-        .filter((field) => field.type === "textarea")
-        .map((field) => renderField(field))}
+      {textareaSpecificFields.map((field) => (
+        <RenderField key={field.id} field={field} formData={formData} onChange={onChange} />
+      ))}
 
       <button type="submit" className={styles.submitButton}>
         Enregistrer
