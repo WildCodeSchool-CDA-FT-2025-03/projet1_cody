@@ -6,25 +6,25 @@ type CardRootProps = CardDataType & {
   contenttype: string;
 };
 
+const getPath = (contentType: string, id?: number) => {
+  const mapping = {
+    "jeux": "games",
+    "musique": "music",
+    "film": "movie"
+  };
+  return `/${mapping[contentType as keyof typeof mapping]}/${id}`;
+};
+
 function CardRoot({ id, title, image_url, image_alt, contenttype }: CardRootProps ) {
-  let pageDetailLink = "movie";
-  switch (contenttype) {
-  case "jeux":
-    pageDetailLink = "game";
-    break;
-  case "musique":
-    pageDetailLink = "music";
-    break;
-  }
   return (
     <article className={style.CardRoot}>
       <figure className={style.ContainerImage}>
-        <Link to={"/" + pageDetailLink + "/" + id  }>
+        <Link to={ getPath(contenttype, id) }>
           <img src={image_url} alt={image_alt} />
         </Link>
       </figure>
       <div className={style.ContainerText}>
-        <Link to={"/" + pageDetailLink + "/" + id  }>
+        <Link to={ getPath(contenttype, id) }>
           <h1 className={style.Title}>{title}</h1>
         </Link>
       </div>
