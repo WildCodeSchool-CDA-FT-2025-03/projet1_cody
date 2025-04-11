@@ -17,7 +17,6 @@ const getPath = (contentType: string, id?: number) => {
 };
 
 function CardRoot({ id, title, image_url, image_alt, contenttype }: CardRootProps ) {
-  // const fallbackImage = "../../assets/images/chat.webp";
   const imageToDisplay = image_url?.trim() ? image_url : fallbackImage;
   return (
     <article className={style.CardRoot}>
