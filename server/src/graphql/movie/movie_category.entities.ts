@@ -18,10 +18,10 @@ export class MovieCategory extends BaseEntity {
 
   @Column()
   @Field()
-  name: string;
+  name?: string;
 
   @Field(() => [Movie])
   @ManyToMany(() => Movie, (movies) => movies.movie_categories)
   @JoinTable()
-  movies: Movie[];
+  movies?: Movie[];
 }
