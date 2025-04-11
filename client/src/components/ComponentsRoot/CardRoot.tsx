@@ -8,7 +8,7 @@ type CardRootProps = CardDataType & {
 
 const getPath = (contentType: string, id?: number) => {
   const mapping = {
-    "jeux": "games",
+    "jeux": "game",
     "musique": "music",
     "film": "movie"
   };

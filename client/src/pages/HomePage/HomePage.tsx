@@ -1,5 +1,5 @@
 import CarrouselRoot from "../../components/ComponentsRoot/CarrouselRoot";
-import CSSTargetPage from "../StylePage.module.css";
+import css from "./HomePage.module.css";
 import CardDataType from "../../types/Old-card.type";
 import { useQuery, gql } from "@apollo/client";
 
@@ -32,9 +32,9 @@ function HomePage() {
   if (error) return <p>There might be an issue</p>;
 
   return (
-    <main className={CSSTargetPage.Main}>
+    <main className={css.Main}>
       <CarrouselRoot cards={data?.getLastGames} h2="jeux"/>
-      <CarrouselRoot cards={data?.getLastMovies} h2="films"/>
+      <CarrouselRoot cards={data?.getLastMovies} h2="film"/>
     </main>
   );
 }
