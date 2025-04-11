@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 // Import des Pages
 import ContentPage from "../pages/ContentPage/ContentPage";
 import GameDetailPage from "../pages/GameDetailPage/DetailPage";
+import MovieDetailPage from "../pages/MovieDetailPage/DetailPage";
 import HomePage from "../pages/HomePage/HomePage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
@@ -22,6 +23,7 @@ export const ROUTES = {
   GAMES: "/game",
   BOOKS: "/book",
   GAME_DETAILS: "/game/:id",
+  MOVIE_DETAILS: "/movie/:id",
   PROFILE: "/profile",
   ADD_MEDIA: "/add-media",
   NOT_FOUND: "/not-found",
@@ -59,6 +61,10 @@ const routerClient: RouterClientType[] = [
   {
     path: ROUTES.GAME_DETAILS,
     element: <GameDetailPage />,
+  },
+  {
+    path: ROUTES.MOVIE_DETAILS,
+    element: <MovieDetailPage />,
   },
   {
     path: ROUTES.NOT_FOUND,
