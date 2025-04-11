@@ -89,6 +89,12 @@ function MovieDetailPage() {
     return result;
   };
 
+  const getFieldRoot = (fieldname: string)  => {
+    return (data?.getOneMovieById[fieldname as keyof typeof data.getOneMovieById] || "").toString();
+  };
+
+  const duration = data?.getOneMovieById.duration || 0;
+
   let yeartMovie = "";
   if(data?.getOneMovieById.release_date) {
     yeartMovie = new Date(data?.getOneMovieById.release_date).getFullYear().toString();
@@ -99,13 +105,13 @@ function MovieDetailPage() {
       <TitleAndBtnReturn title="Détail film" />
       <div className={CSSTargetPage.container}>
         <DetailRoot 
-          image_url={data?.getOneMovieById.image_url || ""} 
-          image_alt={data?.getOneMovieById.image_alt || ""} 
-          pegi_esbr_rating={data?.getOneMovieById.targeted_audience || ""} 
-          title={data?.getOneMovieById.title || ""} 
+          image_url={getFieldRoot("image_url")} 
+          image_alt={getFieldRoot("image_alt")} 
+          pegi_esbr_rating={getFieldRoot("targeted_audience")} 
+          title={getFieldRoot("title")} 
           year={yeartMovie} 
-          duration={data?.getOneMovieById.duration || 0} 
-          summary={data?.getOneMovieById.summary || ""} 
+          duration={duration} 
+          summary={getFieldRoot("summary")} 
           awards={myawards} 
           category={mycategory}/>
         <SpecificField data={getField(data, specificField)} />

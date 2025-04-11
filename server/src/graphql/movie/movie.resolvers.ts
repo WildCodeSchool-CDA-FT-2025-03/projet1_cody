@@ -29,6 +29,6 @@ export default class MovieResolvers {
         },
       });
     }
-    return null;
+    throw new Error("Identifiant incorrect!");
   }
 }
