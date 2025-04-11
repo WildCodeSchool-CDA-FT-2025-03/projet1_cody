@@ -28,6 +28,7 @@ const GET_ALL_GAME = gql`
       name
     }
     pegi_esbr_rating
+    release_date
   }
   getLastGames {
     id
@@ -55,6 +56,7 @@ type getOneGame = {
       name: string;
     }[];
     pegi_esbr_rating: string;
+    release_date: Date;
   };
 };
 
@@ -85,6 +87,11 @@ function GameDetailPage() {
     return result;
   };
 
+  let yeartGame = "";
+  if(data?.getOneGameById.release_date) {
+    yeartGame = new Date(data?.getOneGameById.release_date).getFullYear().toString();
+  }
+
   return (
     <main className={CSSTargetPage.Main}>
       <div className={CSSTargetPage.container}>
@@ -93,7 +100,7 @@ function GameDetailPage() {
           image_alt={data?.getOneGameById.image_alt || ""} 
           pegi_esbr_rating={data?.getOneGameById.pegi_esbr_rating || ""} 
           title={data?.getOneGameById.title || ""} 
-          year={0} 
+          year={yeartGame} 
           duration={data?.getOneGameById.duration_min || 0} 
           summary={data?.getOneGameById.summary || ""} 
           awards={myawards} 

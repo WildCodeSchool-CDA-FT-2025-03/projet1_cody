@@ -1,6 +1,6 @@
 import style from "./DetailRoot.module.css";
 
-function DetailRoot({image_url, image_alt, title, year, duration, summary, awards, category, pegi_esbr_rating}: { image_url: string, image_alt: string, title: string; year: number; duration: number; summary: string; awards: string[]; category: string[], pegi_esbr_rating: string }) {
+function DetailRoot({image_url, image_alt, title, year, duration, summary, awards, category, pegi_esbr_rating}: { image_url: string, image_alt: string, title: string; year: string; duration: number; summary: string; awards: string[]; category: string[], pegi_esbr_rating: string }) {
   return (
     <section className={style.containerComponent}>
       <figure className={style.detailPicture}>
