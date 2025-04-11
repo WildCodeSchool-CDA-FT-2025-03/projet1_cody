@@ -8,7 +8,11 @@ function DetailRoot({image_url, image_alt, title, year, duration, summary, award
       </figure>
       <div className={style.detailTitle}>
         <h1>{title}</h1>
-        <span className={style.detailYear}>Année : {year} - duration : {duration} - Public : {pegi_esbr_rating}</span>
+        <span className={style.detailYear}>
+          <span>Année : {year}</span>
+          <span>Durée : {duration}</span>
+          <span>Public : {pegi_esbr_rating}</span>
+        </span>
       </div>
       <ul className={style.detailAward}>
         {awards.map((item, index) => (

@@ -4,6 +4,7 @@
   grid-template-columns: 50% 50%;
   grid-template-rows: repeat(6, auto);
   width: 100%;
+  column-gap: 20px;
 }
 @media (min-width: 768px) {
   .containerComponent {
@@ -18,6 +19,9 @@
   grid-row: 1 / 3;
   margin: 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   .detailPicture {
@@ -28,15 +32,11 @@
 }
 
 .detailPicture img {
-  border-radius: 10px;
-  width: 50vw;
-}
-@media (min-width: 768px) {
-  .detailPicture img {
-    width: 50vw;
-    border-radius: 20px;
-    padding: 10px;
-  }
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 20px;
 }
 
 .detailTitle {
@@ -53,25 +53,40 @@
 }
 
 .detailTitle h1 {
-  font-size: 2rem;
+  font-size: 1rem;
   margin: 0.5rem 0 0.5rem 0;
 }
+@media (min-width: 768px) {
+  .detailTitle {
+    font-size: 2rem;
+  }
+}
 
-.detailTitle span {
-  font-size: 1rem;
+.detailTitle span span {
+  font-size: 0.8rem;
+  display: block;
+  line-height: 1.5rem;
+}
+@media (min-width: 768px) {
+  .detailTitle span span {
+    font-size: 1rem;
+    display: inline;
+    padding-right: 20px;
+  }
 }
 
 .detailAward {
   width: 100%;
   grid-column: 1 / 3;
   grid-row: 4 / 5;
-  margin: 0;
+  margin: 10px;
   padding: 0;
 }
 @media (min-width: 768px) {
   .detailAward {
     grid-column: 2 / 2;
     grid-row: 2 / 2;
+    margin: 0;
   }
 }
 
