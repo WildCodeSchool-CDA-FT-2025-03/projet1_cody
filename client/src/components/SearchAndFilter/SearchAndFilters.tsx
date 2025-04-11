@@ -81,12 +81,6 @@ function SearchAndFilters({
         } className={styles.filtersButtonSearch}><img src={searchIcon} alt="Rechercher" className={styles.searchIcon} /></button>
       </div>
       <div className={styles.filtersContainer}>
-        <label htmlFor="genre" className={styles.visuallyHidden}>
-          Filtrer par genre
-        </label>
-        <select className={styles.filters} name="genre" id="genre">
-          <option value="all">Tous</option>
-        </select>
         <label htmlFor="sortBy" className={styles.sortByLabel}>
           Trier par
         </label>
