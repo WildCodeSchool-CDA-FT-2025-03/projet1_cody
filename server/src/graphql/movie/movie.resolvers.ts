@@ -17,6 +17,19 @@ export default class MovieResolvers {
       take: 15,
     });
   }
+  
+  @Query(() => Movie, { nullable: true })
+  async getOneMovieById(@Arg("id") id: string): Promise<Movie | null> {
+    if (!isNaN(parseInt(id))) {
+      return await Movie.findOne({
+        where: { id: parseInt(id) },
+        relations: {
+          movie_awards: true,
+          movie_categories: true,
+        },
+      });
+    }
+    throw new Error("Identifiant incorrect!");
 
   @Mutation(() => Movie)
   async createMovie(

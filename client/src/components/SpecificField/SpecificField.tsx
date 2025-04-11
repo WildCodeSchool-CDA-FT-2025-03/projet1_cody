@@ -5,8 +5,10 @@ function SpecificField({data}: { data: Record<string, string> }) {
     <section className={style.detailOther}>
       {Object.entries(data).map(([key, value]) => (
         <>
-          <h2>{key}</h2>
-          <p>{value}</p>
+          <div className={style.specificRow}>
+            <h2>{key} :</h2>
+            <p>{value}</p>
+          </div>
         </>
       ))}
     </section>

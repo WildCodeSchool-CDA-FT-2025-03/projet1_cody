@@ -33,7 +33,7 @@
     padding: 0;
 }
 
-.ContainerImage > img {
+.ContainerImage > a > img {
     display: block;
     width: 100%;
     height: 100%;
@@ -41,7 +41,7 @@
     border-radius: 8px;
     transition: box-shadow 0.3s ease;
 }
-.ContainerImage > img:hover {
+.ContainerImage > a > img:hover {
     box-shadow: 0 0 15px 5px var(--color-yellow);
 }
 
@@ -56,26 +56,31 @@
     padding: 0;
 }
 
-.Title {
+.ContainerText a {
+    text-decoration: none;
+}
+
+a > .Title {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.75rem; /* 12px */
     margin: 0.25rem 0;
     text-align: center;
+    text-decoration: dotted;
+    color: var(--color-white);
     height: 1.875rem; /* 30px */
 }
 @media (min-width: 768px) {
-    .Title {
+    a > .Title {
         font-size: 0.875rem; /* 14px */
         height: 2.1875rem; /* 35px */
     }
 }
 @media (min-width: 1024px) {
-    .Title {
+    a > .Title {
         font-size: 1rem; /* 16px */
         height: 2.5rem; /* 40px */
-
     }
 }
 

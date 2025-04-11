@@ -14,7 +14,7 @@ export default class GeneralResolvers {
     @Arg("search", { nullable: true }) search?: string
   ): Promise<General[]> {
     const mapping = {
-      game: Game,
+      jeux: Game,
       film: Movie,
     };
     const where: Record<string, unknown> = {};

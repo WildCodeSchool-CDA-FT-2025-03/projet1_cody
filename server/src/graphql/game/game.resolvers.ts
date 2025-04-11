@@ -14,7 +14,7 @@ export default class GameResolvers {
         },
       });
     }
-    return null;
+    throw new Error("Identifiant incorrect!");
   }
 
   @Query(() => [Game])
