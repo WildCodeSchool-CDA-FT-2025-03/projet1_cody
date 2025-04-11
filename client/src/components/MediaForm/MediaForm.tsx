@@ -1,6 +1,6 @@
 import { FormField, FormDataType } from "../../types/FormType";
 // Styles
-import styles from "../../pages/AddMediaPage/AddMediaPage.module.css";
+import styles from "./MediaForm.module.css";
 
 type MediaFormProps = {
   title: string;
