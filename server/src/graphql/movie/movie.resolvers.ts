@@ -17,7 +17,7 @@ export default class MovieResolvers {
       take: 15,
     });
   }
-  
+
   @Query(() => Movie, { nullable: true })
   async getOneMovieById(@Arg("id") id: string): Promise<Movie | null> {
     if (!isNaN(parseInt(id))) {
@@ -30,6 +30,7 @@ export default class MovieResolvers {
       });
     }
     throw new Error("Identifiant incorrect!");
+  }
 
   @Mutation(() => Movie)
   async createMovie(
