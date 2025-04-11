@@ -66,7 +66,7 @@ function CarrouselRoot({ cards, h2 }: CarrouselRootProps) {
       <div className={style.CarrouselRoot} ref={scrollRef}>
         <div className={style.CarrouselWrapper}>
           {cards?.map((card) => (
-            <CardRoot key={card.id} {...card} />
+            <CardRoot key={card.id} {...card} contenttype={h2} />
           ))}
         </div>
       </div>

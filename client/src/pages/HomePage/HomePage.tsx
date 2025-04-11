@@ -33,8 +33,8 @@ function HomePage() {
 
   return (
     <main className={CSSTargetPage.Main}>
-      <CarrouselRoot cards={data?.getLastGames} h2="Games"/>
-      <CarrouselRoot cards={data?.getLastMovies} h2="Movies"/>
+      <CarrouselRoot cards={data?.getLastGames} h2="jeux"/>
+      <CarrouselRoot cards={data?.getLastMovies} h2="films"/>
     </main>
   );
 }

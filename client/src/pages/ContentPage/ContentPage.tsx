@@ -20,8 +20,8 @@ type getAllRessource = {
 function ContentPage({ contentType, title }: ContentPageProps) {
   const getSearchText = () => {
     if (contentType === ContentType.Movies) return "film";
-    if (contentType === ContentType.Music) return "music";
-    if (contentType === ContentType.Games) return "game";
+    if (contentType === ContentType.Music) return "musique";
+    if (contentType === ContentType.Games) return "jeux";
     if (contentType === ContentType.Books) return "book";
     return "...";
   };
@@ -42,7 +42,7 @@ function ContentPage({ contentType, title }: ContentPageProps) {
           {data?.getAll.length === 0 ? (
             <p className={styles.noResults}>Aucun résultat trouvé pour votre recherche</p>
           ) : (
-            data?.getAll.map((card) => <CardRoot key={card.id ?? card.title} {...card} />)
+            data?.getAll.map((card) => <CardRoot key={card.id ?? card.title} {...card} contenttype={getSearchText()} />)
           )}
         </div>
       </section>
