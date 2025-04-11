@@ -57,7 +57,7 @@
   margin: 0.5rem 0 0.5rem 0;
 }
 @media (min-width: 768px) {
-  .detailTitle {
+  .detailTitle h1 {
     font-size: 2rem;
   }
 }
