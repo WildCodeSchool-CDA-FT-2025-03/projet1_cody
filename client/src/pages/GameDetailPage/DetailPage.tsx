@@ -9,6 +9,7 @@ import DetailRoot from "../../components/DetailRoot/DetailRoot";
 import SpecificField from "../../components/SpecificField/SpecificField";
 import CardDataType from "../../types/Old-card.type";
 import CarrouselRoot from "../../components/ComponentsRoot/CarrouselRoot";
+import TitleAndBtnReturn from "../../components/ContentTitleAndBtnReturn/ContentTitleAndBtnReturn";
 
 
 const GET_ALL_GAME = gql`
@@ -94,6 +95,7 @@ function GameDetailPage() {
 
   return (
     <main className={CSSTargetPage.Main}>
+      <TitleAndBtnReturn title="Détail jeux" />
       <div className={CSSTargetPage.container}>
         <DetailRoot 
           image_url={data?.getOneGameById.image_url || ""} 
