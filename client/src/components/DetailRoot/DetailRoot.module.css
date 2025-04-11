@@ -8,7 +8,7 @@
 }
 @media (min-width: 768px) {
   .containerComponent {
-    grid-template-columns: 25% 60%;
+    grid-template-columns: 25% 60% 15%;
     grid-template-rows: repeat(6, auto);
   }
 }
