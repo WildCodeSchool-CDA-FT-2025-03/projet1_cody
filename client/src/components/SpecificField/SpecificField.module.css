@@ -1,12 +1,37 @@
 .detailOther {
+  display: flex;
+  gap: 1rem;
+  flex-direction:column;
   width: 100%;
-  background-color: pink;
   grid-column: 1 / 3;
   grid-row: 5 / 6;
+  margin: 1rem 0 0 0;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .detailOther {
-    grid-column: 3 / 3;
+    grid-column: 2 / 2;
     grid-row: 1 / 6;
   }
+}
+
+.specificRow
+{
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* h2 prend 1 part, p prend 2 parts */
+  align-items: left;
+  gap: 0;
+}
+
+.specificRow h2,
+.specificRow p {
+  margin: 0;
+}
+
+.detailOther h2 {
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.detailOther p {
+  font-size:  0.8rem;
 }
